@@ -1,12 +1,846 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Mi Proyecto Web</title>
-<link rel="stylesheet" href="css/estilos.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dulce Peluche | Tienda Oficial</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --coral: #f58b76;
+      --coral-dark: #e6735c;
+      --teal-wall: #2b7a98;
+      --teal-deep: #226680;
+      --peach-card: #fde3dd;
+      --peach-text: #5d433e;
+      --gold-orange: #e89b54;
+      --text-dark: #3b3736;
+      --text-muted: #7a7270;
+      --bg-white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      color: var(--text-dark);
+      background-color: var(--bg-white);
+      overflow-x: hidden;
+    }
+
+    /* ================= NAVBAR SUPERIOR ================= */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #f2ecea;
+      padding: 12px 5%;
+    }
+
+    .nav-container {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text-dark);
+    }
+
+    .brand-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--coral);
+      display: grid;
+      place-items: center;
+      color: white;
+      font-weight: 800;
+      font-size: 18px;
+    }
+
+    .brand-name {
+      font-family: 'Quicksand', sans-serif;
+      font-weight: 700;
+      font-size: 1.15rem;
+      line-height: 1.1;
+    }
+
+    .brand-sub {
+      display: block;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      font-weight: 700;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--coral);
+    }
+
+    .center-emblem {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--coral);
+      display: grid;
+      place-items: center;
+      box-shadow: 0 4px 12px rgba(245, 139, 118, 0.35);
+      flex-shrink: 0;
+    }
+
+    .btn-cart {
+      background: linear-gradient(135deg, var(--coral), #f7a072);
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 999px;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 0.85rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 12px rgba(245, 139, 118, 0.3);
+      transition: transform 0.15s;
+    }
+
+    .btn-cart:hover {
+      transform: translateY(-1px);
+    }
+
+    /* ================= HERO BANNER AZUL CON ILUSTRACIONES ================= */
+    .hero {
+      position: relative;
+      background: radial-gradient(circle at 30% 35%, #3489a8 0%, var(--teal-wall) 60%, var(--teal-deep) 100%);
+      min-height: 490px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+    }
+
+    /* Fondo ilustrado SVG integrado (nubes, lunas, estrellas y corazones) */
+    .hero-doodles {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1120px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 36px 5% 0;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      gap: 24px;
+      flex: 1;
+    }
+
+    .hero-image-box {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      height: 100%;
+    }
+
+    .hero-image-box img {
+      max-height: 390px;
+      width: auto;
+      max-width: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 14px 22px rgba(16, 48, 61, 0.35));
+      transform: translateY(14px);
+    }
+
+    .hero-text {
+      color: #ffffff;
+      padding-bottom: 40px;
+    }
+
+    .hero-text h1 {
+      font-family: 'Quicksand', sans-serif;
+      font-size: clamp(2.1rem, 4vw, 3.1rem);
+      font-weight: 700;
+      line-height: 1.12;
+      margin-bottom: 14px;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+    }
+
+    .hero-text p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.92);
+      max-width: 380px;
+      margin-bottom: 22px;
+    }
+
+    .hero-btn {
+      display: inline-block;
+      background: #ffffff;
+      color: var(--teal-deep);
+      font-weight: 800;
+      text-decoration: none;
+      padding: 11px 24px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.14);
+      transition: transform 0.2s;
+    }
+
+    .hero-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* Superficie clara inferior donde descansan los peluches */
+    .hero-floor {
+      position: relative;
+      z-index: 1;
+      height: 54px;
+      width: 100%;
+      background: linear-gradient(180deg, #dde4e7 0%, #f3f6f7 100%);
+      border-top: 1px solid rgba(255, 255, 255, 0.6);
+    }
+
+    /* ================= SECCIÓN DESTACADA (TARJETA DIVIDIDA) ================= */
+    .page-wrapper {
+      position: relative;
+      background-color: #ffffff;
+      background-image:
+        radial-gradient(#d8eef5 3px, transparent 3px),
+        radial-gradient(#fde0d9 4px, transparent 4px);
+      background-size: 90px 90px;
+      background-position: 0 0, 45px 45px;
+      padding: 48px 5% 80px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-family: 'Quicksand', sans-serif;
+      font-size: 1.65rem;
+      font-weight: 700;
+      color: var(--gold-orange);
+      margin-bottom: 28px;
+      letter-spacing: 0.3px;
+    }
+
+    .featured-card {
+      max-width: 980px;
+      margin: 0 auto 64px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 16px 38px rgba(68, 52, 48, 0.09);
+    }
+
+    .featured-media {
+      background: linear-gradient(135deg, #b8d2dc 0%, #d9e7ec 65%, #f5d8d6 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      min-height: 310px;
+    }
+
+    .featured-media img {
+      max-height: 270px;
+      width: auto;
+      max-width: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.14));
+    }
+
+    .featured-info {
+      background: var(--peach-card);
+      padding: 38px 34px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .featured-info h2 {
+      font-family: 'Quicksand', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--peach-text);
+      margin-bottom: 12px;
+    }
+
+    .featured-info p {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: #6e5651;
+      margin-bottom: 22px;
+    }
+
+    .featured-price {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--coral-dark);
+      margin-bottom: 16px;
+    }
+
+    .btn-gradient {
+      align-self: flex-start;
+      background: linear-gradient(90deg, #f58b76 0%, #f7b267 100%);
+      color: #fff;
+      border: none;
+      padding: 11px 26px;
+      border-radius: 8px;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      cursor: pointer;
+      box-shadow: 0 6px 14px rgba(245, 139, 118, 0.35);
+      transition: transform 0.15s;
+    }
+
+    .btn-gradient:hover {
+      transform: translateY(-2px);
+    }
+
+    /* ================= CATÁLOGO 3 COLUMNAS ================= */
+    .catalog-grid {
+      max-width: 980px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .product-card {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 14px;
+      box-shadow: 0 10px 26px rgba(50, 50, 60, 0.06);
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 30px rgba(50, 50, 60, 0.11);
+    }
+
+    .product-thumb {
+      aspect-ratio: 1 / 1;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      margin-bottom: 14px;
+      overflow: hidden;
+    }
+
+    /* Fondos pastel alternados como en la imagen */
+    .bg-sky { background: #dff0f7; }
+    .bg-pearl { background: #f3f3f5; }
+    .bg-cream { background: #f8f3ee; }
+
+    .product-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transition: transform 0.25s;
+    }
+
+    .product-card:hover .product-thumb img {
+      transform: scale(1.05);
+    }
+
+    .product-title {
+      font-family: 'Quicksand', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 4px;
+    }
+
+    .product-desc {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .product-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 8px;
+      border-top: 1px dashed #eee6e4;
+    }
+
+    .product-price {
+      font-weight: 800;
+      font-size: 1.05rem;
+      color: var(--teal-wall);
+    }
+
+    .btn-add {
+      background: var(--peach-card);
+      color: var(--peach-text);
+      border: none;
+      padding: 7px 14px;
+      border-radius: 999px;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .btn-add:hover {
+      background: var(--coral);
+      color: #ffffff;
+    }
+
+    /* ================= MODAL CARRITO / PEDIDO WHATSAPP ================= */
+    .cart-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(34, 48, 56, 0.45);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 200;
+      padding: 16px;
+    }
+
+    .cart-modal.open {
+      display: flex;
+    }
+
+    .cart-box {
+      background: #fff;
+      width: 100%;
+      max-width: 420px;
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.18);
+    }
+
+    .cart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      border-bottom: 1px solid #f0e8e6;
+      padding-bottom: 10px;
+    }
+
+    .cart-items {
+      max-height: 240px;
+      overflow-y: auto;
+      margin-bottom: 16px;
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px dashed #f0e8e6;
+      font-size: 0.9rem;
+    }
+
+    .cart-total {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 800;
+      font-size: 1.1rem;
+      margin-bottom: 16px;
+    }
+
+    .btn-whatsapp {
+      width: 100%;
+      background: #25d366;
+      color: #fff;
+      border: none;
+      padding: 12px;
+      border-radius: 10px;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 0.95rem;
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      padding: 26px;
+      background: #faf6f5;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 820px) {
+      .hero-content,
+      .featured-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .hero-text p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .featured-info {
+        align-items: center;
+      }
+      .btn-gradient {
+        align-self: center;
+      }
+      .catalog-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .catalog-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
-<h1>¡Hola Mundo! 🎉</h1>
-<script src="js/main.js"></script>
+
+  <!-- BARRA SUPERIOR -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="brand">
+        <div class="brand-icon">🐰</div>
+        <div>
+          <span class="brand-name">Dulce Peluche</span>
+          <span class="brand-sub">Tienda de Peluches Suaves</span>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#favorito">Destacado</a></li>
+      </ul>
+
+      <!-- Emblema circular coral central -->
+      <div class="center-emblem" title="Dulce Peluche">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round">
+          <path d="M9 9V4a2 2 0 1 1 4 0v5M15 9V4a2 2 0 1 0-4 0v5"/>
+          <circle cx="12" cy="15" r="6"/>
+        </svg>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="#catalogo">Catálogo</a></li>
+        <li><a href="#contacto">Envíos</a></li>
+      </ul>
+
+      <button class="btn-cart" onclick="toggleCart()">
+        <span>Cesta</span>
+        <span id="cart-count">(0)</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- BANNER PRINCIPAL CON FONDO AZUL ILUSTRADO INTEGRADO -->
+  <section class="hero" id="inicio">
+    <!-- Ilustraciones de fondo (nubes, estrellas, lunas y corazones) -->
+    <svg class="hero-doodles" viewBox="0 0 1440 500" preserveAspectRatio="xMidYMid slice">
+      <!-- Nubes blancas con contorno suave -->
+      <g fill="#e8f3f7" opacity="0.9">
+        <path d="M620 110c-12 0-22 8-25 19-10 2-18 11-18 22 0 12 10 22 22 22h56c14 0 25-11 25-25 0-13-10-24-23-25-6-8-16-13-27-13h-10z"/>
+        <path d="M1230 290c-14 0-26 9-30 22-12 2-21 13-21 26 0 15 12 27 27 27h68c17 0 30-13 30-30 0-16-12-29-28-30-7-9-19-15-32-15h-14z"/>
+        <path d="M150 95c-11 0-20 7-23 17-9 2-16 10-16 20 0 11 9 20 20 20h50c13 0 23-10 23-23 0-12-9-22-21-23-5-7-14-11-24-11h-9z"/>
+      </g>
+      <!-- Lunas crecientes pastel -->
+      <path d="M890 70c-16 6-24 24-18 40 6 16 24 24 40 18-11-2-20-10-23-21-3-11 1-23 10-30-3-4-6-6-9-7z" fill="#f7a08b"/>
+      <path d="M935 205c-15 5-22 21-17 36 5 15 21 22 36 17-10-2-18-9-21-19-3-10 1-21 9-27-3-3-5-5-7-7z" fill="#f7a08b"/>
+      <!-- Estrellas y corazones coral -->
+      <g fill="#f58b76">
+        <circle cx="520" cy="70" r="6"/>
+        <circle cx="760" cy="52" r="9"/>
+        <circle cx="1070" cy="68" r="10"/>
+        <circle cx="1290" cy="120" r="7"/>
+        <circle cx="480" cy="210" r="6"/>
+        <circle cx="1100" cy="240" r="7"/>
+        <polygon points="815,155 819,165 830,166 821,173 824,184 815,178 806,184 809,173 800,166 811,165"/>
+        <polygon points="1115,175 1118,183 1127,184 1120,190 1122,198 1115,193 1108,198 1110,190 1103,184 1112,183"/>
+        <polygon points="360,65 363,73 372,74 365,80 367,88 360,83 353,88 355,80 348,74 357,73"/>
+      </g>
+    </svg>
+
+    <div class="hero-content">
+      <!-- AQUÍ VA TU IMAGEN PRINCIPAL (imagenes/principal.png) -->
+      <div class="hero-image-box">
+        <img
+          src="imagenes/principal.png"
+          alt="Peluche Principal"
+          onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22360%22 height=%22360%22 viewBox=%220 0 360 360%22><rect width=%22360%22 height=%22360%22 rx=%2224%22 fill=%22rgba(255,255,255,0.16)%22 stroke=%22white%22 stroke-dasharray=%228 8%22 stroke-width=%223%22/><text x=%22180%22 y=%22170%22 font-family=%22sans-serif%22 font-size=%2218%22 font-weight=%22bold%22 fill=%22white%22 text-anchor=%22middle%22>Pon tu foto aquí:</text><text x=%22180%22 y=%22200%22 font-family=%22monospace%22 font-size=%2215%22 fill=%22%23fde3dd%22 text-anchor=%22middle%22>imagenes/principal.png</text></svg>'"
+        />
+      </div>
+
+      <div class="hero-text">
+        <h1>Tu nuevo<br>compañero suave</h1>
+        <p>Peluches hipoalergénicos hechos con telas ultra suaves. El regalo perfecto para abrazar, decorar y coleccionar.</p>
+        <a href="#catalogo" class="hero-btn">Ver Colección</a>
+      </div>
+    </div>
+
+    <!-- Piso claro inferior del estudio -->
+    <div class="hero-floor"></div>
+  </section>
+
+  <!-- CONTENIDO CON FONDO PASTEL -->
+  <main class="page-wrapper">
+
+    <!-- SECCIÓN FAVORITO DEL MES -->
+    <h2 class="section-title" id="favorito">Favorito de la Semana</h2>
+
+    <section class="featured-card">
+      <div class="featured-media">
+        <!-- AQUÍ VA TU IMAGEN DESTACADA (imagenes/destacado.png) -->
+        <img
+          src="imagenes/destacado.png"
+          alt="Peluche Destacado"
+          onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22280%22 height=%22240%22 viewBox=%220 0 280 240%22><rect width=%22280%22 height=%22240%22 rx=%2216%22 fill=%22rgba(255,255,255,0.45)%22/><text x=%22140%22 y=%22115%22 font-family=%22sans-serif%22 font-size=%2215%22 font-weight=%22bold%22 fill=%22%233b3736%22 text-anchor=%22middle%22>Foto destacada:</text><text x=%22140%22 y=%22140%22 font-family=%22monospace%22 font-size=%2213%22 fill=%22%23e6735c%22 text-anchor=%22middle%22>imagenes/destacado.png</text></svg>'"
+        />
+      </div>
+      <div class="featured-info">
+        <h2>Edición Especial Pastel</h2>
+        <p>Suavidad premium con relleno siliconado que mantiene su forma tras cada abrazo. Disponible con entrega inmediata y bolsa de regalo incluida.</p>
+        <div class="featured-price">Bs. 120</div>
+        <button class="btn-gradient" onclick="addToCart('Edición Especial Pastel', 120)">Agregar al Pedido</button>
+      </div>
+    </section>
+
+    <!-- CATÁLOGO DE 3 COLUMNAS -->
+    <h2 class="section-title" id="catalogo">Catálogo Disponible</h2>
+
+    <section class="catalog-grid">
+      <!-- PRODUCTO 1 -->
+      <article class="product-card">
+        <div class="product-thumb bg-sky">
+          <img
+            src="imagenes/peluche1.jpg"
+            alt="Conejito Orejas Largas"
+            onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22220%22 height=%22220%22 viewBox=%220 0 220 220%22><text x=%22110%22 y=%22105%22 font-family=%22sans-serif%22 font-size=%2213%22 font-weight=%22bold%22 fill=%22%232b7a98%22 text-anchor=%22middle%22>Foto 1:</text><text x=%22110%22 y=%22128%22 font-family=%22monospace%22 font-size=%2212%22 fill=%22%23555%22 text-anchor=%22middle%22>imagenes/peluche1.jpg</text></svg>'"
+          />
+        </div>
+        <h3 class="product-title">Conejito Orejas Largas</h3>
+        <p class="product-desc">35 cm · Felpa suave pastel</p>
+        <div class="product-footer">
+          <span class="product-price">Bs. 85</span>
+          <button class="btn-add" onclick="addToCart('Conejito Orejas Largas', 85)">+ Agregar</button>
+        </div>
+      </article>
+
+      <!-- PRODUCTO 2 -->
+      <article class="product-card">
+        <div class="product-thumb bg-pearl">
+          <img
+            src="imagenes/peluche2.jpg"
+            alt="Conejito Blanco Moño"
+            onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22220%22 height=%22220%22 viewBox=%220 0 220 220%22><text x=%22110%22 y=%22105%22 font-family=%22sans-serif%22 font-size=%2213%22 font-weight=%22bold%22 fill=%22%23e6735c%22 text-anchor=%22middle%22>Foto 2:</text><text x=%22110%22 y=%22128%22 font-family=%22monospace%22 font-size=%2212%22 fill=%22%23555%22 text-anchor=%22middle%22>imagenes/peluche2.jpg</text></svg>'"
+          />
+        </div>
+        <h3 class="product-title">Conejito Blanco Moño</h3>
+        <p class="product-desc">30 cm · Edición tierna</p>
+        <div class="product-footer">
+          <span class="product-price">Bs. 80</span>
+          <button class="btn-add" onclick="addToCart('Conejito Blanco Moño', 80)">+ Agregar</button>
+        </div>
+      </article>
+
+      <!-- PRODUCTO 3 -->
+      <article class="product-card">
+        <div class="product-thumb bg-cream">
+          <img
+            src="imagenes/peluche3.jpg"
+            alt="Peluche Bicolor Pastel"
+            onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22220%22 height=%22220%22 viewBox=%220 0 220 220%22><text x=%22110%22 y=%22105%22 font-family=%22sans-serif%22 font-size=%2213%22 font-weight=%22bold%22 fill=%22%23e89b54%22 text-anchor=%22middle%22>Foto 3:</text><text x=%22110%22 y=%22128%22 font-family=%22monospace%22 font-size=%2212%22 fill=%22%23555%22 text-anchor=%22middle%22>imagenes/peluche3.jpg</text></svg>'"
+          />
+        </div>
+        <h3 class="product-title">Peluche Bicolor Pastel</h3>
+        <p class="product-desc">32 cm · Súper esponjoso</p>
+        <div class="product-footer">
+          <span class="product-price">Bs. 90</span>
+          <button class="btn-add" onclick="addToCart('Peluche Bicolor Pastel', 90)">+ Agregar</button>
+        </div>
+      </article>
+
+      <!-- PRODUCTO 4 -->
+      <article class="product-card">
+        <div class="product-thumb bg-cream">
+          <img
+            src="imagenes/peluche4.jpg"
+            alt="Osito Miel"
+            onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22220%22 height=%22220%22 viewBox=%220 0 220 220%22><text x=%22110%22 y=%22105%22 font-family=%22sans-serif%22 font-size=%2213%22 font-weight=%22bold%22 fill=%22%23e89b54%22 text-anchor=%22middle%22>Foto 4:</text><text x=%22110%22 y=%22128%22 font-family=%22monospace%22 font-size=%2212%22 fill=%22%23555%22 text-anchor=%22middle%22>imagenes/peluche4.jpg</text></svg>'"
+          />
+        </div>
+        <h3 class="product-title">Osito Miel</h3>
+        <p class="product-desc">28 cm · Con bufanda tejida</p>
+        <div class="product-footer">
+          <span class="product-price">Bs. 75</span>
+          <button class="btn-add" onclick="addToCart('Osito Miel', 75)">+ Agregar</button>
+        </div>
+      </article>
+
+      <!-- PRODUCTO 5 -->
+      <article class="product-card">
+        <div class="product-thumb bg-sky">
+          <img
+            src="imagenes/peluche5.jpg"
+            alt="Conejito Rosa Nube"
+            onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22220%22 height=%22220%22 viewBox=%220 0 220 220%22><text x=%22110%22 y=%22105%22 font-family=%22sans-serif%22 font-size=%2213%22 font-weight=%22bold%22 fill=%22%232b7a98%22 text-anchor=%22middle%22>Foto 5:</text><text x=%22110%22 y=%22128%22 font-family=%22monospace%22 font-size=%2212%22 fill=%22%23555%22 text-anchor=%22middle%22>imagenes/peluche5.jpg</text></svg>'"
+          />
+        </div>
+        <h3 class="product-title">Conejito Rosa Nube</h3>
+        <p class="product-desc">40 cm · Tamaño grande</p>
+        <div class="product-footer">
+          <span class="product-price">Bs. 110</span>
+          <button class="btn-add" onclick="addToCart('Conejito Rosa Nube', 110)">+ Agregar</button>
+        </div>
+      </article>
+
+      <!-- PRODUCTO 6 -->
+      <article class="product-card">
+        <div class="product-thumb bg-pearl">
+          <img
+            src="imagenes/peluche6.jpg"
+            alt="Mini Llavero Peluche"
+            onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22220%22 height=%22220%22 viewBox=%220 0 220 220%22><text x=%22110%22 y=%22105%22 font-family=%22sans-serif%22 font-size=%2213%22 font-weight=%22bold%22 fill=%22%23e6735c%22 text-anchor=%22middle%22>Foto 6:</text><text x=%22110%22 y=%22128%22 font-family=%22monospace%22 font-size=%2212%22 fill=%22%23555%22 text-anchor=%22middle%22>imagenes/peluche6.jpg</text></svg>'"
+          />
+        </div>
+        <h3 class="product-title">Dúo Peluches Pastel</h3>
+        <p class="product-desc">Set x2 · Ideal para regalar</p>
+        <div class="product-footer">
+          <span class="product-price">Bs. 145</span>
+          <button class="btn-add" onclick="addToCart('Dúo Peluches Pastel', 145)">+ Agregar</button>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer id="contacto">
+    <p><strong>Dulce Peluche</strong> · Envíos a todo el país · Pedidos directos por WhatsApp</p>
+  </footer>
+
+  <!-- MODAL DEL CARRITO -->
+  <div class="cart-modal" id="cart-modal" onclick="if(event.target===this) toggleCart()">
+    <div class="cart-box">
+      <div class="cart-header">
+        <h3>Tu Cesta de Peluches</h3>
+        <button onclick="toggleCart()" style="border:none;background:none;font-size:1.3rem;cursor:pointer;">✕</button>
+      </div>
+      <div class="cart-items" id="cart-items">
+        <p style="color:#888;text-align:center;">Aún no agregaste peluches.</p>
+      </div>
+      <div class="cart-total">
+        <span>Total:</span>
+        <span id="cart-total">Bs. 0</span>
+      </div>
+      <button class="btn-whatsapp" onclick="sendWhatsApp()">Pedir por WhatsApp</button>
+    </div>
+  </div>
+
+  <script>
+    // CAMBIA AQUÍ TU NÚMERO DE WHATSAPP (con código de país, sin +)
+    const TELEFONO_TIENDA = "59170000000";
+
+    let cart = [];
+
+    function addToCart(name, price) {
+      cart.push({ name, price });
+      updateCartUI();
+    }
+
+    function removeFromCart(index) {
+      cart.splice(index, 1);
+      updateCartUI();
+    }
+
+    function updateCartUI() {
+      document.getElementById("cart-count").textContent = `(${cart.length})`;
+      const list = document.getElementById("cart-items");
+      const totalEl = document.getElementById("cart-total");
+
+      if (cart.length === 0) {
+        list.innerHTML = '<p style="color:#888;text-align:center;">Aún no agregaste peluches.</p>';
+        totalEl.textContent = "Bs. 0";
+        return;
+      }
+
+      let total = 0;
+      list.innerHTML = cart.map((item, i) => {
+        total += item.price;
+        return `
+          <div class="cart-item">
+            <span>${item.name}</span>
+            <span>
+              <strong>Bs. ${item.price}</strong>
+              <button onclick="removeFromCart(${i})" style="margin-left:8px;border:none;background:none;color:#e6735c;cursor:pointer;font-weight:bold;">✕</button>
+            </span>
+          </div>
+        `;
+      }).join("");
+
+      totalEl.textContent = `Bs. ${total}`;
+    }
+
+    function toggleCart() {
+      document.getElementById("cart-modal").classList.toggle("open");
+    }
+
+    function sendWhatsApp() {
+      if (cart.length === 0) return alert("Agrega al menos un peluche primero.");
+      const lines = cart.map(item => `• ${item.name} (Bs. ${item.price})`).join("%0A");
+      const total = cart.reduce((acc, item) => acc + item.price, 0);
+      const msg = `Hola! Quiero hacer este pedido de peluches:%0A%0A${lines}%0A%0A*Total: Bs. ${total}*`;
+      window.open(`https://wa.me/${TELEFONO_TIENDA}?text=${msg}`, "_blank");
+    }
+  </script>
 </body>
 </html>
