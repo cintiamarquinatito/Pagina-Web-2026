@@ -422,7 +422,7 @@ header {
   color: var(--blanco);
 }
 
-/* ================= SECCIÓN EQUIPO / MIS COMPAÑERAS ================= */
+/* ================= SECCIÓN EQUIPO (DÚO DE 2) ================= */
 .team-section {
   max-width: 980px;
   margin: 0 auto;
@@ -443,15 +443,17 @@ header {
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 22px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  max-width: 620px;
+  margin: 0 auto;
 }
 
 .team-card {
   position: relative;
   background: var(--blanco);
   border-radius: 18px;
-  padding: 26px 18px 20px;
+  padding: 28px 20px 22px;
   text-align: center;
   box-shadow: 0 12px 26px rgba(27, 59, 90, 0.07);
   border: 2px solid var(--celeste-claro);
@@ -482,8 +484,8 @@ header {
 }
 
 .team-avatar {
-  width: 110px;
-  height: 110px;
+  width: 115px;
+  height: 115px;
   margin: 0 auto 14px;
   border-radius: 50%;
   background: var(--celeste-claro);
@@ -504,7 +506,7 @@ header {
 
 .team-name {
   font-family: 'Quicksand', sans-serif;
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: var(--azul-oscuro);
   margin-bottom: 6px;
@@ -514,15 +516,15 @@ header {
   display: inline-block;
   background: var(--celeste);
   color: var(--blanco);
-  font-size: 0.75rem;
+  font-size: 0.76rem;
   font-weight: 800;
-  padding: 3px 12px;
+  padding: 4px 14px;
   border-radius: 999px;
   margin-bottom: 10px;
 }
 
 .team-bio {
-  font-size: 0.82rem;
+  font-size: 0.85rem;
   line-height: 1.5;
   color: var(--azul-oscuro);
   opacity: 0.85;
@@ -532,9 +534,9 @@ header {
 .plush-tag {
   background: var(--celeste-claro);
   color: var(--azul-oscuro);
-  font-size: 0.74rem;
+  font-size: 0.76rem;
   font-weight: 800;
-  padding: 6px 10px;
+  padding: 7px 12px;
   border-radius: 10px;
   border: 1px dashed var(--celeste);
 }
@@ -628,13 +630,6 @@ footer {
 }
 
 /* ================= DISEÑO RESPONSIVO ================= */
-@media (max-width: 880px) {
-  .team-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 28px 20px;
-  }
-}
-
 @media (max-width: 820px) {
   .hero-content,
   .featured-card {
@@ -659,7 +654,7 @@ footer {
   }
 }
 
-@media (max-width: 520px) {
+@media (max-width: 560px) {
   .catalog-grid,
   .team-grid {
     grid-template-columns: 1fr;
