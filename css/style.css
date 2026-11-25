@@ -137,11 +137,11 @@ header {
   transform: translateY(-1px);
 }
 
-/* ================= HERO BANNER CUTE CON TARJETA DE ENCAJE ================= */
+/* ================= HERO BANNER CUTE CON FOCA GRANDE ================= */
 .hero {
   position: relative;
   background: linear-gradient(180deg, #88cef2 0%, var(--celeste) 100%);
-  min-height: 470px;
+  min-height: 500px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -160,14 +160,14 @@ header {
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 1120px;
+  max-width: 1200px;
   width: 100%;
   margin: 0 auto;
-  padding: 38px 5% 28px;
+  padding: 28px 4% 20px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.15fr 0.85fr;
   align-items: center;
-  gap: 32px;
+  gap: 28px;
   flex: 1;
 }
 
@@ -178,15 +178,16 @@ header {
 }
 
 .hero-image-box img {
-  max-height: 340px;
-  width: auto;
-  max-width: 100%;
+  max-height: 440px;
+  width: 100%;
+  max-width: 520px;
   object-fit: contain;
-  filter: drop-shadow(0 14px 22px rgba(29, 60, 92, 0.18));
+  filter: drop-shadow(0 16px 24px rgba(29, 60, 92, 0.2));
+  transform: scale(1.06);
 }
 
 .hero-text-card {
-  background: rgba(251, 253, 255, 0.94);
+  background: rgba(251, 253, 255, 0.95);
   border-radius: 26px;
   padding: 32px 34px;
   border: 2px dashed var(--celeste);
@@ -254,29 +255,122 @@ header {
   background-size: 28px 22px;
 }
 
-/* ================= CONTENIDO PRINCIPAL ================= */
+/* ================= CONTENIDO PRINCIPAL CON HUELLITAS BIEN VISIBLES ================= */
 .page-wrapper {
   position: relative;
   background-color: var(--blanco);
-  background-image: radial-gradient(var(--celeste-claro) 5px, transparent 5px);
-  background-size: 48px 48px;
-  padding: 48px 5% 80px;
+  background-image: radial-gradient(#d8eefb 5px, transparent 5px);
+  background-size: 42px 42px;
+  padding: 36px 4% 80px;
+  overflow: hidden;
+}
+
+.side-doodles {
+  position: absolute;
+  top: 30px;
+  bottom: 30px;
+  width: 240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.side-left {
+  left: 1.5%;
+}
+
+.side-right {
+  right: 1.5%;
+}
+
+.doodle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+}
+
+.doodle-row.shift-in {
+  padding-left: 38px;
+  padding-right: 0;
+}
+
+.doodle-row.shift-out {
+  padding-left: 0;
+  padding-right: 38px;
+}
+
+.doodle-paw {
+  width: 78px;
+  height: 78px;
+  fill: var(--celeste);
+  opacity: 0.55;
+  filter: drop-shadow(0 4px 8px rgba(100, 188, 232, 0.25));
+}
+
+.doodle-sym {
+  width: 54px;
+  height: 54px;
+  fill: #98d3f2;
+  opacity: 0.72;
+}
+
+.tilt-left {
+  transform: rotate(-18deg);
+}
+
+.tilt-right {
+  transform: rotate(18deg);
+}
+
+.perks-bar,
+.section-title,
+.featured-card,
+.catalog-grid,
+.steps-section,
+.team-section {
+  position: relative;
+  z-index: 2;
+}
+
+/* ================= BARRITA CUTE DE BENEFICIOS ================= */
+.perks-bar {
+  max-width: 1160px;
+  margin: 0 auto 48px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.perk-pill {
+  background: var(--blanco-puro);
+  border: 2px dashed var(--celeste);
+  border-radius: 999px;
+  padding: 12px 16px;
+  text-align: center;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--azul-oscuro);
+  box-shadow: 0 6px 16px rgba(29, 60, 92, 0.05);
 }
 
 .section-title {
   text-align: center;
   font-family: 'Fredoka', sans-serif;
-  font-size: 1.75rem;
+  font-size: 1.8rem;
   font-weight: 600;
   color: var(--azul-oscuro);
-  margin-bottom: 30px;
+  margin-bottom: 28px;
   letter-spacing: 0.3px;
 }
 
 /* ================= SECCIÓN DESTACADA CON ENCAJE ================= */
 .featured-card {
-  max-width: 960px;
-  margin: 0 auto 68px;
+  max-width: 1160px;
+  margin: 0 auto 66px;
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
   background: var(--blanco-puro);
@@ -305,22 +399,35 @@ header {
 
 .featured-info {
   background: var(--celeste-claro);
-  padding: 36px 34px;
+  padding: 36px 38px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
+.mini-tag {
+  align-self: flex-start;
+  background: var(--blanco-puro);
+  color: var(--celeste);
+  border: 1.5px dashed var(--celeste);
+  font-family: 'Fredoka', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 3px 12px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
+
 .featured-info h2 {
   font-family: 'Fredoka', sans-serif;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: var(--azul-oscuro);
   margin-bottom: 12px;
 }
 
 .featured-info p {
-  font-size: 0.95rem;
+  font-size: 0.96rem;
   line-height: 1.65;
   color: var(--azul-oscuro);
   opacity: 0.9;
@@ -329,7 +436,7 @@ header {
 
 .featured-price {
   font-family: 'Fredoka', sans-serif;
-  font-size: 1.45rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: var(--azul-oscuro);
   margin-bottom: 18px;
@@ -340,11 +447,11 @@ header {
   background: var(--celeste);
   color: var(--blanco-puro);
   border: 2px dashed var(--blanco-puro);
-  padding: 12px 26px;
+  padding: 12px 28px;
   border-radius: 999px;
   font-family: 'Fredoka', sans-serif;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.94rem;
   cursor: pointer;
   box-shadow: 0 6px 14px rgba(100, 188, 232, 0.35);
   transition: background 0.2s, transform 0.15s;
@@ -357,17 +464,18 @@ header {
 
 /* ================= CATÁLOGO 3 COLUMNAS CON ENCAJE ================= */
 .catalog-grid {
-  max-width: 960px;
-  margin: 0 auto 76px;
+  max-width: 1160px;
+  margin: 0 auto 74px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 28px;
 }
 
 .product-card {
+  position: relative;
   background: var(--blanco-puro);
   border-radius: 22px;
-  padding: 16px;
+  padding: 18px;
   border: 2px dashed var(--celeste-medio);
   box-shadow: 0 10px 24px rgba(29, 60, 92, 0.05);
   text-align: center;
@@ -379,6 +487,22 @@ header {
   border-color: var(--celeste);
 }
 
+.card-badge {
+  position: absolute;
+  top: 26px;
+  left: 26px;
+  z-index: 3;
+  background: var(--blanco-puro);
+  color: var(--azul-oscuro);
+  border: 1.5px dashed var(--celeste);
+  font-family: 'Fredoka', sans-serif;
+  font-size: 0.76rem;
+  font-weight: 600;
+  padding: 3px 11px;
+  border-radius: 999px;
+  box-shadow: 0 3px 8px rgba(29, 60, 92, 0.08);
+}
+
 .product-thumb {
   aspect-ratio: 1 / 1;
   border-radius: 16px;
@@ -387,7 +511,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 16px;
+  padding: 18px;
   margin-bottom: 14px;
   overflow: hidden;
 }
@@ -405,14 +529,14 @@ header {
 
 .product-title {
   font-family: 'Fredoka', sans-serif;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: 600;
   color: var(--azul-oscuro);
   margin-bottom: 4px;
 }
 
 .product-desc {
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   color: var(--azul-oscuro);
   opacity: 0.8;
   margin-bottom: 12px;
@@ -429,7 +553,7 @@ header {
 .product-price {
   font-family: 'Fredoka', sans-serif;
   font-weight: 600;
-  font-size: 1.12rem;
+  font-size: 1.15rem;
   color: var(--azul-oscuro);
 }
 
@@ -437,11 +561,11 @@ header {
   background: var(--celeste-claro);
   color: var(--azul-oscuro);
   border: 1.5px dashed var(--celeste);
-  padding: 7px 15px;
+  padding: 8px 16px;
   border-radius: 999px;
   font-family: 'Fredoka', sans-serif;
   font-weight: 600;
-  font-size: 0.84rem;
+  font-size: 0.86rem;
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
 }
@@ -451,11 +575,59 @@ header {
   color: var(--blanco-puro);
 }
 
+/* ================= PASOS PARA PEDIR ================= */
+.steps-section {
+  max-width: 1160px;
+  margin: 0 auto 74px;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.step-card {
+  background: var(--blanco-puro);
+  border: 2px dashed var(--celeste);
+  border-radius: 22px;
+  padding: 24px 20px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(29, 60, 92, 0.04);
+}
+
+.step-num {
+  display: inline-grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--celeste);
+  color: var(--blanco-puro);
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin-bottom: 10px;
+}
+
+.step-card h3 {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1.08rem;
+  color: var(--azul-oscuro);
+  margin-bottom: 6px;
+}
+
+.step-card p {
+  font-size: 0.88rem;
+  color: var(--azul-oscuro);
+  opacity: 0.85;
+}
+
 /* ================= SECCIÓN EQUIPO (DÚO DE 2) ================= */
 .team-section {
-  max-width: 960px;
+  max-width: 1160px;
   margin: 0 auto;
-  padding-top: 12px;
+  padding-top: 8px;
 }
 
 .team-section .section-title {
@@ -466,7 +638,7 @@ header {
   text-align: center;
   color: var(--azul-oscuro);
   opacity: 0.85;
-  font-size: 0.96rem;
+  font-size: 0.98rem;
   margin-bottom: 38px;
 }
 
@@ -474,7 +646,7 @@ header {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 28px;
-  max-width: 620px;
+  max-width: 680px;
   margin: 0 auto;
 }
 
@@ -715,19 +887,47 @@ footer {
 }
 
 /* ================= DISEÑO RESPONSIVO ================= */
+@media (max-width: 1360px) {
+  .side-doodles {
+    width: 150px;
+  }
+  .doodle-row {
+    justify-content: center;
+  }
+  .doodle-sym {
+    display: none;
+  }
+}
+
+@media (max-width: 1180px) {
+  .side-doodles {
+    display: none;
+  }
+}
+
 @media (max-width: 820px) {
+  .perks-bar {
+    grid-template-columns: repeat(2, 1fr);
+  }
   .hero-content,
   .featured-card {
     grid-template-columns: 1fr;
     text-align: center;
   }
-  .featured-info {
+  .hero-image-box img {
+    max-height: 320px;
+    transform: none;
+  }
+  .featured-info,
+  .mini-tag {
     align-items: center;
+    align-self: center;
   }
   .btn-primary {
     align-self: center;
   }
-  .catalog-grid {
+  .catalog-grid,
+  .steps-grid {
     grid-template-columns: repeat(2, 1fr);
   }
   .nav-links {
@@ -736,7 +936,9 @@ footer {
 }
 
 @media (max-width: 560px) {
+  .perks-bar,
   .catalog-grid,
+  .steps-grid,
   .team-grid,
   .cart-wa-buttons {
     grid-template-columns: 1fr;

@@ -12,6 +12,7 @@
 </head>
 <body>
 
+  <!-- BARRA SUPERIOR CON BORDE DE ENCAJE -->
   <header>
     <div class="nav-container">
       <a href="../index.html" class="brand">
@@ -24,13 +25,69 @@
         </div>
       </a>
 
-      <ul class="nav-links">
+      <div class="center-emblem" title="Dulce Peluche">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round">
+          <path d="M9 9V4a2 2 0 1 1 4 0v5M15 9V4a2 2 0 1 0-4 0v5"/>
+          <circle cx="12" cy="15" r="6"/>
+        </svg>
+      </div>
+
+      <ul class="nav-links" style="display: flex;">
         <li><a href="../index.html">← Volver a la Tienda</a></li>
       </ul>
     </div>
   </header>
 
   <main class="page-wrapper">
+
+    <!-- DECORACIÓN LATERAL IZQUIERDA (CAMINITO DE HUELLITAS + SÍMBOLOS) -->
+    <div class="side-doodles side-left" aria-hidden="true">
+      <div class="doodle-row">
+        <svg class="doodle-paw tilt-left" viewBox="0 0 64 64"><ellipse cx="32" cy="40" rx="13" ry="10"/><circle cx="16" cy="26" r="5.5"/><circle cx="26" cy="18" r="5.5"/><circle cx="38" cy="18" r="5.5"/><circle cx="48" cy="26" r="5.5"/></svg>
+        <svg class="doodle-sym tilt-right" viewBox="0 0 64 64"><path d="M32 54S10 40 10 24a12 12 0 0 1 22-6.5A12 12 0 0 1 54 24c0 16-22 30-22 30z"/></svg>
+      </div>
+      <div class="doodle-row shift-in">
+        <svg class="doodle-sym tilt-left" viewBox="0 0 64 64"><polygon points="32,6 39,23 58,25 44,37 48,56 32,46 16,56 20,37 6,25 25,23"/></svg>
+        <svg class="doodle-paw tilt-right" viewBox="0 0 64 64"><ellipse cx="32" cy="40" rx="13" ry="10"/><circle cx="16" cy="26" r="5.5"/><circle cx="26" cy="18" r="5.5"/><circle cx="38" cy="18" r="5.5"/><circle cx="48" cy="26" r="5.5"/></svg>
+      </div>
+      <div class="doodle-row">
+        <svg class="doodle-paw tilt-left" viewBox="0 0 64 64"><ellipse cx="32" cy="40" rx="13" ry="10"/><circle cx="16" cy="26" r="5.5"/><circle cx="26" cy="18" r="5.5"/><circle cx="38" cy="18" r="5.5"/><circle cx="48" cy="26" r="5.5"/></svg>
+        <svg class="doodle-sym tilt-right" viewBox="0 0 64 64"><path d="M18 46h28a10 10 0 0 0 2-19.8A13 13 0 0 0 23 23a11 11 0 0 0-5 23z"/></svg>
+      </div>
+      <div class="doodle-row shift-in">
+        <svg class="doodle-sym tilt-left" viewBox="0 0 64 64"><path d="M32 54S10 40 10 24a12 12 0 0 1 22-6.5A12 12 0 0 1 54 24c0 16-22 30-22 30z"/></svg>
+        <svg class="doodle-paw tilt-right" viewBox="0 0 64 64"><ellipse cx="32" cy="40" rx="13" ry="10"/><circle cx="16" cy="26" r="5.5"/><circle cx="26" cy="18" r="5.5"/><circle cx="38" cy="18" r="5.5"/><circle cx="48" cy="26" r="5.5"/></svg>
+      </div>
+    </div>
+
+    <!-- DECORACIÓN LATERAL DERECHA (CAMINITO DE HUELLITAS + SÍMBOLOS) -->
+    <div class="side-doodles side-right" aria-hidden="true">
+      <div class="doodle-row">
+        <svg class="doodle-sym tilt-left" viewBox="0 0 64 64"><polygon points="32,6 39,23 58,25 44,37 48,56 32,46 16,56 20,37 6,25 25,23"/></svg>
+        <svg class="doodle-paw tilt-right" viewBox="0 0 64 64"><ellipse cx="32" cy="40" rx="13" ry="10"/><circle cx="16" cy="26" r="5.5"/><circle cx="26" cy="18" r="5.5"/><circle cx="38" cy="18" r="5.5"/><circle cx="48" cy="26" r="5.5"/></svg>
+      </div>
+      <div class="doodle-row shift-out">
+        <svg class="doodle-paw tilt-left" viewBox="0 0 64 64"><ellipse cx="32" cy="40" rx="13" ry="10"/><circle cx="16" cy="26" r="5.5"/><circle cx="26" cy="18" r="5.5"/><circle cx="38" cy="18" r="5.5"/><circle cx="48" cy="26" r="5.5"/></svg>
+        <svg class="doodle-sym tilt-right" viewBox="0 0 64 64"><path d="M32 54S10 40 10 24a12 12 0 0 1 22-6.5A12 12 0 0 1 54 24c0 16-22 30-22 30z"/></svg>
+      </div>
+      <div class="doodle-row">
+        <svg class="doodle-sym tilt-left" viewBox="0 0 64 64"><path d="M18 46h28a10 10 0 0 0 2-19.8A13 13 0 0 0 23 23a11 11 0 0 0-5 23z"/></svg>
+        <svg class="doodle-paw tilt-right" viewBox="0 0 64 64"><ellipse cx="32" cy="40" rx="13" ry="10"/><circle cx="16" cy="26" r="5.5"/><circle cx="26" cy="18" r="5.5"/><circle cx="38" cy="18" r="5.5"/><circle cx="48" cy="26" r="5.5"/></svg>
+      </div>
+      <div class="doodle-row shift-out">
+        <svg class="doodle-paw tilt-left" viewBox="0 0 64 64"><ellipse cx="32" cy="40" rx="13" ry="10"/><circle cx="16" cy="26" r="5.5"/><circle cx="26" cy="18" r="5.5"/><circle cx="38" cy="18" r="5.5"/><circle cx="48" cy="26" r="5.5"/></svg>
+        <svg class="doodle-sym tilt-right" viewBox="0 0 64 64"><polygon points="32,6 39,23 58,25 44,37 48,56 32,46 16,56 20,37 6,25 25,23"/></svg>
+      </div>
+    </div>
+
+    <!-- BARRITA SUPERIOR DE INFO -->
+    <section class="perks-bar">
+      <div class="perk-pill">⏰ Lunes a Sábado · 9:00 a 20:00</div>
+      <div class="perk-pill">📍 Entregas personales y envíos</div>
+      <div class="perk-pill">🎀 Tarjeta dedicatoria gratis</div>
+      <div class="perk-pill">⚡ Respuesta rápida por WhatsApp</div>
+    </section>
+
     <h2 class="section-title">✿ Contáctanos y Síguenos ✿</h2>
     <p class="team-subtitle">Escríbenos directo por WhatsApp o visítanos en nuestras redes oficiales.</p>
 
@@ -58,10 +115,25 @@
       </article>
     </div>
 
-    <div style="max-width: 620px; margin: 32px auto 0; display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
-      <a href="https://www.facebook.com/" target="_blank" class="btn-wa-card" style="text-align: center; background: var(--celeste);">Facebook Oficial</a>
-      <a href="https://www.instagram.com/" target="_blank" class="btn-wa-card" style="text-align: center;">Instagram Oficial</a>
-    </div>
+    <!-- REDES SOCIALES OFICIALES -->
+    <section class="steps-section" style="margin-top: 56px; margin-bottom: 0;">
+      <h2 class="section-title">✿ Nuestras Redes Oficiales ✿</h2>
+      <div class="steps-grid" style="max-width: 780px; margin: 0 auto; grid-template-columns: repeat(2, 1fr);">
+        <div class="step-card">
+          <span class="step-num">f</span>
+          <h3>Facebook Oficial</h3>
+          <p style="margin-bottom: 14px;">Mira nuestros catálogos nuevos, promociones y entregas del día.</p>
+          <a href="https://www.facebook.com/" target="_blank" class="btn-wa-card" style="background: var(--celeste);">Visitar Facebook ♥</a>
+        </div>
+        <div class="step-card">
+          <span class="step-num">✦</span>
+          <h3>Instagram Oficial</h3>
+          <p style="margin-bottom: 14px;">Reels, fotos reales de cada peluche y pedidos personalizados.</p>
+          <a href="https://www.instagram.com/" target="_blank" class="btn-wa-card">Visitar Instagram ♥</a>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer>
