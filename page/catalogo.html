@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catálogo | Dulce Peluche</title>
+  <link rel="icon" href="../img/logo.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+  <!-- BARRA SUPERIOR CON ENCAJE -->
+  <header>
+    <div class="nav-container">
+      <a href="../index.html" class="brand">
+        <div class="brand-icon">
+          <img src="../img/logo.png" alt="Logo Dulce Peluche" />
+        </div>
+        <div>
+          <span class="brand-name">Dulce Peluche</span>
+          <span class="brand-sub">Tienda de Peluches Suaves</span>
+        </div>
+      </a>
+
+      <div class="center-emblem" title="Dulce Peluche">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round">
+          <path d="M9 9V4a2 2 0 1 1 4 0v5M15 9V4a2 2 0 1 0-4 0v5"/>
+          <circle cx="12" cy="15" r="6"/>
+        </svg>
+      </div>
+
+      <ul class="nav-links" style="display: flex;">
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="catalogo.html">Catálogo</a></li>
+        <li><a href="contactame.html">Contáctanos</a></li>
+        <li>
+          <button class="btn-cart" onclick="toggleCart()">
+            🧸 Cesta (<span id="cart-count">0</span>)
+          </button>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="page-wrapper">
+
+    <!-- DECORACIÓN LATERAL IZQUIERDA -->
+    <div class="side-doodles side-left" aria-hidden="true">
+      <div class="doodle-row">
+        <svg class="doodle-paw tilt-left" viewBox="0 0 64 64"><ellipse cx="32" cy="40" rx="13" ry="10"/><circle cx="16" cy="26" r="5.5"/><circle cx="26" cy="18" r="5.5"/><circle cx="38" cy="18" r="5.5"/><circle cx="48" cy="26" r="5.5"/></svg>
+        <svg class="doodle-sym tilt-right" viewBox="0 0 64 64"><path d="M32 54S10 40 10 24a12 12 0 0 1 22-6.5A12 12 0 0 1 54 24c0 16-22 30-22 30z"/></svg>
+      </div>
+      <div class="doodle-row shift-in">
+        <svg class="doodle-sym tilt-left" viewBox="0 0 64 64"><polygon points="32,6 39,23 58,25 44,37 48,56 32,46 16,56 20,37 6,25 25,23"/></svg>
+        <svg class="doodle-paw tilt-right" viewBox="0 0 64 64"><ellipse cx="32" cy="40" rx="13" ry="10"/><circle cx="16" cy="26" r="5.5"/><circle cx="26" cy="18" r="5.5"/><circle cx="38" cy="18" r="5.5"/><circle cx="48" cy="26" r="5.5"/></svg>
+      </div>
+      <div class="doodle-row">
+        <svg class="doodle-paw tilt-left" viewBox="0 0 64 64"><ellipse cx="32" cy="40" rx="13" ry="10"/><circle cx="16" cy="26" r="5.5"/><circle cx="26" cy="18" r="5.5"/><circle cx="38" cy="18" r="5.5"/><circle cx="48" cy="26" r="5.5"/></svg>
+        <svg class="doodle-sym tilt-right" viewBox="0 0 64 64"><path d="M18 46h28a10 10 0 0 0 2-19.8A13 13 0 0 0 23 23a11 11 0 0 0-5 23z"/></svg>
+      </div>
+      <div class="doodle-row shift-in">
+        <svg class="doodle-sym tilt-left" viewBox="0 0 64 64"><path d="M32 54S10 40 10 24a12 12 0 0 1 22-6.5A12 12 0 0 1 54 24c0 16-22 30-22 30z"/></svg>
+        <svg class="doodle-paw tilt-right" viewBox="0 0 64 64"><ellipse cx="32" cy="40" rx="13" ry="10"/><circle cx="16" cy="26" r="5.5"/><circle cx="26" cy="18" r="5.5"/><circle cx="38" cy="18" r="5.5"/><circle cx="48" cy="26" r="5.5"/></svg>
+      </div>
+    </div>
+
+    <!-- DECORACIÓN LATERAL DERECHA -->
+    <div class="side-doodles side-right" aria-hidden="true">
+      <div class="doodle-row">
+        <svg class="doodle-sym tilt-left" viewBox="0 0 64 64"><polygon points="32,6 39,23 58,25 44,37 48,56 32,46 16,56 20,37 6,25 25,23"/></svg>
+        <svg class="doodle-paw tilt-right" viewBox="0 0 64 64"><ellipse cx="32" cy="40" rx="13" ry="10"/><circle cx="16" cy="26" r="5.5"/><circle cx="26" cy="18" r="5.5"/><circle cx="38" cy="18" r="5.5"/><circle cx="48" cy="26" r="5.5"/></svg>
+      </div>
+      <div class="doodle-row shift-out">
+        <svg class="doodle-paw tilt-left" viewBox="0 0 64 64"><ellipse cx="32" cy="40" rx="13" ry="10"/><circle cx="16" cy="26" r="5.5"/><circle cx="26" cy="18" r="5.5"/><circle cx="38" cy="18" r="5.5"/><circle cx="48" cy="26" r="5.5"/></svg>
+        <svg class="doodle-sym tilt-right" viewBox="0 0 64 64"><path d="M32 54S10 40 10 24a12 12 0 0 1 22-6.5A12 12 0 0 1 54 24c0 16-22 30-22 30z"/></svg>
+      </div>
+      <div class="doodle-row">
+        <svg class="doodle-sym tilt-left" viewBox="0 0 64 64"><path d="M18 46h28a10 10 0 0 0 2-19.8A13 13 0 0 0 23 23a11 11 0 0 0-5 23z"/></svg>
+        <svg class="doodle-paw tilt-right" viewBox="0 0 64 64"><ellipse cx="32" cy="40" rx="13" ry="10"/><circle cx="16" cy="26" r="5.5"/><circle cx="26" cy="18" r="5.5"/><circle cx="38" cy="18" r="5.5"/><circle cx="48" cy="26" r="5.5"/></svg>
+      </div>
+      <div class="doodle-row shift-out">
+        <svg class="doodle-paw tilt-left" viewBox="0 0 64 64"><ellipse cx="32" cy="40" rx="13" ry="10"/><circle cx="16" cy="26" r="5.5"/><circle cx="26" cy="18" r="5.5"/><circle cx="38" cy="18" r="5.5"/><circle cx="48" cy="26" r="5.5"/></svg>
+        <svg class="doodle-sym tilt-right" viewBox="0 0 64 64"><polygon points="32,6 39,23 58,25 44,37 48,56 32,46 16,56 20,37 6,25 25,23"/></svg>
+      </div>
+    </div>
+
+    <!-- DESTACADO DE LA SEMANA -->
+    <h2 class="section-title">✿ Destacado de la Semana ✿</h2>
+    <section class="featured-card" id="favorito">
+      <div class="featured-media">
+        <img src="../img/azulito toma 2.png" alt="Edición Especial Celeste" />
+      </div>
+      <div class="featured-info">
+        <span class="mini-tag">✦ Edición Limitada</span>
+        <h2>Edición Especial Celeste</h2>
+        <p>Suavidad premium con relleno siliconado que mantiene su forma tras cada abrazo. Disponible con entrega inmediata y bolsa de regalo incluida.</p>
+        <div class="featured-price">Bs. 120</div>
+        <button class="btn-primary" onclick="addToCart('Edición Especial Celeste', 120)">
+          Agregar al Pedido ♥
+        </button>
+      </div>
+    </section>
+
+    <!-- CATÁLOGO COMPLETO -->
+    <h2 class="section-title">✿ Catálogo Disponible ✿</h2>
+    <p class="team-subtitle">Elige tus peluches favoritos y agrégalos a tu cesta para pedir por WhatsApp.</p>
+
+    <section class="catalog-grid">
+      <!-- PRODUCTO 1 -->
+      <article class="product-card">
+        <span class="card-badge">♥ Más vendido</span>
+        <div class="product-thumb">
+          <img src="../img/panda.jpg" alt="Panda Clásico" />
+        </div>
+        <h3 class="product-title">Panda Clásico</h3>
+        <p class="product-desc">Suave, abrazable y de tamaño ideal para regalar o decorar tu habitación.</p>
+        <div class="product-footer">
+          <span class="product-price">Bs. 95</span>
+          <button class="btn-add" onclick="addToCart('Panda Clásico', 95)">+ Agregar</button>
+        </div>
+      </article>
+
+      <!-- PRODUCTO 2 -->
+      <article class="product-card">
+        <span class="card-badge">✦ Nuevo</span>
+        <div class="product-thumb">
+          <img src="../img/uzi.png" alt="Uzi Edición Colección" />
+        </div>
+        <h3 class="product-title">Uzi Edición Colección</h3>
+        <p class="product-desc">Detalles bordados de alta calidad con acabados suaves y resistentes.</p>
+        <div class="product-footer">
+          <span class="product-price">Bs. 110</span>
+          <button class="btn-add" onclick="addToCart('Uzi Edición Colección', 110)">+ Agregar</button>
+        </div>
+      </article>
+
+      <!-- PRODUCTO 3 -->
+      <article class="product-card">
+        <span class="card-badge">★ Favorito</span>
+        <div class="product-thumb">
+          <img src="../img/squirtle.jpg" alt="Squirtle Con Bufanda" />
+        </div>
+        <h3 class="product-title">Squirtle Con Bufanda</h3>
+        <p class="product-desc">Edición tierna con bufanda tejida incluida, ideal para fans y coleccionistas.</p>
+        <div class="product-footer">
+          <span class="product-price">Bs. 100</span>
+          <button class="btn-add" onclick="addToCart('Squirtle Con Bufanda', 100)">+ Agregar</button>
+        </div>
+      </article>
+
+      <!-- PRODUCTO 4 -->
+      <article class="product-card">
+        <span class="card-badge">✦ Colección</span>
+        <div class="product-thumb">
+          <img src="../img/freddy.jpg" alt="Freddy Peluche" />
+        </div>
+        <h3 class="product-title">Freddy Peluche</h3>
+        <p class="product-desc">Textura afelpada extra suave con detalles fieles y costuras reforzadas.</p>
+        <div class="product-footer">
+          <span class="product-price">Bs. 105</span>
+          <button class="btn-add" onclick="addToCart('Freddy Peluche', 105)">+ Agregar</button>
+        </div>
+      </article>
+
+      <!-- PRODUCTO 5 -->
+      <article class="product-card">
+        <span class="card-badge">♥ Tierno</span>
+        <div class="product-thumb">
+          <img src="../img/snoopy de PELUCHE.png" alt="Snoopy Clásico" />
+        </div>
+        <h3 class="product-title">Snoopy Clásico</h3>
+        <p class="product-desc">El perrito más querido en versión súper esponjosa y lista para abrazar.</p>
+        <div class="product-footer">
+          <span class="product-price">Bs. 90</span>
+          <button class="btn-add" onclick="addToCart('Snoopy Clásico', 90)">+ Agregar</button>
+        </div>
+      </article>
+
+      <!-- PRODUCTO 6 -->
+      <article class="product-card">
+        <span class="card-badge">★ Dúo Pack</span>
+        <div class="product-thumb">
+          <img src="../img/stich's dobles.png" alt="Dúo Stitch & Ángel" />
+        </div>
+        <h3 class="product-title">Dúo Stitch & Ángel</h3>
+        <p class="product-desc">Pareja perfecta para compartir o regalar en fechas especiales.</p>
+        <div class="product-footer">
+          <span class="product-price">Bs. 165</span>
+          <button class="btn-add" onclick="addToCart('Dúo Stitch & Ángel', 165)">+ Agregar</button>
+        </div>
+      </article>
+    </section>
+
+  </main>
+
+  <!-- MODAL CARRITO -->
+  <div class="cart-modal" id="cart-modal">
+    <div class="cart-box">
+      <div class="cart-header">
+        <h3>🧸 Tu Cesta</h3>
+        <button class="btn-close-modal" onclick="toggleCart()">✕</button>
+      </div>
+      <div class="cart-items" id="cart-items"></div>
+      <div class="cart-total">
+        <span>Total:</span>
+        <span id="cart-total">Bs. 0</span>
+      </div>
+      <p class="cart-wa-label">Enviar pedido por WhatsApp a:</p>
+      <div class="cart-wa-buttons">
+        <button class="btn-whatsapp" onclick="sendWhatsApp('59163397495', 'Cintia')">💬 Cintia</button>
+        <button class="btn-whatsapp alt" onclick="sendWhatsApp('59164550630', 'Briana')">💬 Briana</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p><strong>Dulce Peluche</strong> · Cintia Marquina & Briana Siñani</p>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/rutas.js"></script>
+</body>
+</html>

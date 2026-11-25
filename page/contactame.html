@@ -33,14 +33,21 @@
       </div>
 
       <ul class="nav-links" style="display: flex;">
-        <li><a href="../index.html">← Volver a la Tienda</a></li>
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="catalogo.html">Catálogo</a></li>
+        <li><a href="contactame.html">Contáctanos</a></li>
+        <li>
+          <button class="btn-cart" onclick="toggleCart()">
+            🧸 Cesta (<span id="cart-count">0</span>)
+          </button>
+        </li>
       </ul>
     </div>
   </header>
 
   <main class="page-wrapper">
 
-    <!-- DECORACIÓN LATERAL IZQUIERDA (CAMINITO DE HUELLITAS + SÍMBOLOS) -->
+    <!-- DECORACIÓN LATERAL IZQUIERDA -->
     <div class="side-doodles side-left" aria-hidden="true">
       <div class="doodle-row">
         <svg class="doodle-paw tilt-left" viewBox="0 0 64 64"><ellipse cx="32" cy="40" rx="13" ry="10"/><circle cx="16" cy="26" r="5.5"/><circle cx="26" cy="18" r="5.5"/><circle cx="38" cy="18" r="5.5"/><circle cx="48" cy="26" r="5.5"/></svg>
@@ -60,7 +67,7 @@
       </div>
     </div>
 
-    <!-- DECORACIÓN LATERAL DERECHA (CAMINITO DE HUELLITAS + SÍMBOLOS) -->
+    <!-- DECORACIÓN LATERAL DERECHA -->
     <div class="side-doodles side-right" aria-hidden="true">
       <div class="doodle-row">
         <svg class="doodle-sym tilt-left" viewBox="0 0 64 64"><polygon points="32,6 39,23 58,25 44,37 48,56 32,46 16,56 20,37 6,25 25,23"/></svg>
@@ -136,10 +143,31 @@
 
   </main>
 
+  <!-- MODAL CARRITO -->
+  <div class="cart-modal" id="cart-modal">
+    <div class="cart-box">
+      <div class="cart-header">
+        <h3>🧸 Tu Cesta</h3>
+        <button class="btn-close-modal" onclick="toggleCart()">✕</button>
+      </div>
+      <div class="cart-items" id="cart-items"></div>
+      <div class="cart-total">
+        <span>Total:</span>
+        <span id="cart-total">Bs. 0</span>
+      </div>
+      <p class="cart-wa-label">Enviar pedido por WhatsApp a:</p>
+      <div class="cart-wa-buttons">
+        <button class="btn-whatsapp" onclick="sendWhatsApp('59163397495', 'Cintia')">💬 Cintia</button>
+        <button class="btn-whatsapp alt" onclick="sendWhatsApp('59164550630', 'Briana')">💬 Briana</button>
+      </div>
+    </div>
+  </div>
+
   <footer>
     <p><strong>Dulce Peluche</strong> · Cintia Marquina & Briana Siñani</p>
   </footer>
 
+  <script src="../js/main.js"></script>
   <script src="../js/rutas.js"></script>
 </body>
 </html>

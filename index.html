@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dulce Peluche | Tienda Oficial</title>
+  <title>Dulce Peluche | Tienda de Peluches Suaves</title>
   <link rel="icon" href="img/logo.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,10 +12,10 @@
 </head>
 <body>
 
-  <!-- BARRA SUPERIOR CON BORDE DE ENCAJE -->
+  <!-- BARRA SUPERIOR CON ENCAJE -->
   <header>
     <div class="nav-container">
-      <a href="#" class="brand">
+      <a href="index.html" class="brand">
         <div class="brand-icon">
           <img src="img/logo.png" alt="Logo Dulce Peluche" />
         </div>
@@ -25,11 +25,6 @@
         </div>
       </a>
 
-      <ul class="nav-links">
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#favorito">Destacado</a></li>
-      </ul>
-
       <div class="center-emblem" title="Dulce Peluche">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round">
           <path d="M9 9V4a2 2 0 1 1 4 0v5M15 9V4a2 2 0 1 0-4 0v5"/>
@@ -37,59 +32,92 @@
         </svg>
       </div>
 
-      <ul class="nav-links">
-        <li><a href="#catalogo">Catálogo</a></li>
+      <ul class="nav-links" style="display: flex;">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="page/catalogo.html">Catálogo</a></li>
         <li><a href="page/contactame.html">Contáctanos</a></li>
+        <li>
+          <button class="btn-cart" onclick="toggleCart()">
+            🧸 Cesta (<span id="cart-count">0</span>)
+          </button>
+        </li>
       </ul>
-
-      <button class="btn-cart" onclick="toggleCart()">
-        <span>Cesta</span>
-        <span id="cart-count">(0)</span>
-      </button>
     </div>
   </header>
 
-  <!-- BANNER PRINCIPAL CUTE -->
-  <section class="hero" id="inicio">
-    <svg class="hero-doodles" viewBox="0 0 1440 500" preserveAspectRatio="xMidYMid slice">
-      <g fill="#ffffff" opacity="0.88">
-        <path d="M120 95c-11 0-20 7-23 17-9 2-16 10-16 20 0 11 9 20 20 20h50c13 0 23-10 23-23 0-12-9-22-21-23-5-7-14-11-24-11h-9z"/>
-        <path d="M1280 310c-14 0-26 9-30 22-12 2-21 13-21 26 0 15 12 27 27 27h68c17 0 30-13 30-30 0-16-12-29-28-30-7-9-19-15-32-15h-14z"/>
-        <path d="M1310 90c-10 0-18 6-21 15-8 2-14 9-14 18 0 10 8 18 18 18h44c11 0 20-9 20-20 0-11-8-19-19-20-4-6-12-11-20-11h-8z"/>
+  <!-- HERO BANNER CELESTE CON NUBES, LUNA, ESTRELLAS Y FOCA GIGANTE -->
+  <section class="hero">
+    <svg class="hero-doodles" viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <!-- NUBES BLANCAS ESPONJOSAS -->
+      <g fill="#ffffff" opacity="0.52">
+        <path d="M55 105h95a22 22 0 0 0 4-43.6A28 28 0 0 0 100 53a24 24 0 0 0-45 52z"/>
+        <path d="M525 75h82a19 19 0 0 0 3-37.7A24 24 0 0 0 564 31a21 21 0 0 0-39 44z"/>
+        <path d="M1025 110h105a24 24 0 0 0 5-47.5A30 30 0 0 0 1075 52a26 26 0 0 0-50 58z"/>
+        <path d="M40 425h90a20 20 0 0 0 4-39.6A26 26 0 0 0 83 378a22 22 0 0 0-43 47z"/>
+        <path d="M540 435h96a21 21 0 0 0 4-41.6A27 27 0 0 0 586 385a23 23 0 0 0-46 50z"/>
+        <path d="M1040 415h92a20 20 0 0 0 4-39.6A26 26 0 0 0 1085 367a22 22 0 0 0-45 48z"/>
       </g>
-      <g fill="#ffffff" opacity="0.9">
-        <path d="M190 250c-14 5-21 20-16 34 5 14 20 21 34 16-9-2-17-8-20-18-3-9 1-20 8-25-2-3-4-5-6-7z"/>
-        <path d="M1240 165c-14 5-21 20-16 34 5 14 20 21 34 16-9-2-17-8-20-18-3-9 1-20 8-25-2-3-4-5-6-7z"/>
+
+      <!-- LUNA CRECIENTE GRANDE AL LADO DE LA FOCA Y OTRA A LA DERECHA -->
+      <g fill="#ffffff" opacity="0.62">
+        <!-- Luna principal arriba izquierda de la foca -->
+        <path d="M185 140a34 34 0 1 0 38 48 27 27 0 1 1-38-48z"/>
+        <!-- Luna secundaria al centro-derecha -->
+        <path d="M625 135a24 24 0 1 0 27 34 19 19 0 1 1-27-34z"/>
+        <!-- Luna abajo entre la foca y la tarjeta -->
+        <path d="M565 305a26 26 0 1 0 29 37 21 21 0 1 1-29-37z"/>
       </g>
-      <g fill="#ffffff" opacity="0.88">
-        <circle cx="95" cy="210" r="5"/>
-        <circle cx="680" cy="52" r="6"/>
-        <circle cx="1360" cy="220" r="5"/>
-        <polygon points="310,75 313,83 322,84 315,90 317,98 310,93 303,98 305,90 298,84 307,83"/>
-        <polygon points="1180,75 1183,83 1192,84 1185,90 1187,98 1180,93 1173,98 1175,90 1168,84 1177,83"/>
+
+      <!-- ESTRELLITAS, DESTELLOS Y HUELLITAS REPARTIDAS -->
+      <g fill="#ffffff" opacity="0.45">
+        <!-- Estrellas de 5 puntas -->
+        <polygon points="105,215 111,229 126,231 115,241 118,256 105,248 92,256 95,241 84,231 99,229"/>
+        <polygon points="245,95 250,106 262,108 253,116 255,128 245,122 235,128 237,116 228,108 240,106"/>
+        <polygon points="595,215 601,229 616,231 605,241 608,256 595,248 582,256 585,241 574,231 589,229"/>
+        <polygon points="1135,235 1141,249 1156,251 1145,261 1148,276 1135,268 1122,276 1125,261 1114,251 1129,249"/>
+        <polygon points="165,330 170,341 182,343 173,351 175,363 165,357 155,363 157,351 148,343 160,341"/>
+
+        <!-- Destellos brillantes (4 puntas) -->
+        <path d="M235 200 Q235 215 250 215 Q235 215 235 230 Q235 215 220 215 Q235 215 235 200 Z"/>
+        <path d="M135 155 Q135 166 146 166 Q135 166 135 177 Q135 166 124 166 Q135 166 135 155 Z"/>
+        <path d="M645 265 Q645 277 657 277 Q645 277 645 289 Q645 277 633 277 Q645 277 645 265 Z"/>
+        <path d="M975 75 Q975 88 988 88 Q975 88 975 101 Q975 88 962 88 Q975 88 975 75 Z"/>
+        <path d="M1115 315 Q1115 326 1126 326 Q1115 326 1115 337 Q1115 326 1104 326 Q1115 326 1115 315 Z"/>
+
+        <!-- Puntitos de estrellas lejanas -->
+        <circle cx="155" cy="270" r="3.5"/>
+        <circle cx="220" cy="145" r="3"/>
+        <circle cx="575" cy="175" r="3.5"/>
+        <circle cx="620" cy="375" r="3"/>
+        <circle cx="1105" cy="185" r="3.5"/>
+        <circle cx="75" cy="310" r="3"/>
+
+        <!-- Huellitas cute -->
+        <circle cx="95" cy="295" r="8"/><circle cx="82" cy="283" r="3.5"/><circle cx="91" cy="278" r="3.5"/><circle cx="100" cy="278" r="3.5"/><circle cx="108" cy="283" r="3.5"/>
+        <circle cx="940" cy="105" r="9"/><circle cx="925" cy="91" r="4"/><circle cx="935" cy="85" r="4"/><circle cx="946" cy="85" r="4"/><circle cx="955" cy="91" r="4"/>
       </g>
     </svg>
 
     <div class="hero-content">
       <div class="hero-image-box">
-        <img src="img/985e0abb432506d3842e09fe91f158cc.png" alt="Peluche Principal" />
+        <img src="img/985e0abb432506d3842e09fe91f158cc.png" alt="Foca Peluche Suave" />
       </div>
 
       <div class="hero-text-card">
-        <span class="hero-badge">✦ Colección Tierna ✦</span>
-        <h1>Tu nuevo<br>compañero suave</h1>
-        <p>Peluches hipoalergénicos hechos con telas ultra suaves. El regalo perfecto para abrazar, decorar y coleccionar.</p>
-        <a href="#catalogo" class="hero-btn">Ver Colección ♥</a>
+        <span class="hero-badge">✦ Colección Dulce Peluche</span>
+        <h1>Abrazos Suaves que Llenan el Corazón</h1>
+        <p>Descubre nuestra colección de peluches tiernos, hipoalergénicos y listos para regalar en cualquier ocasión especial.</p>
+        <a href="page/catalogo.html" class="hero-btn">Explorar Catálogo ✿</a>
       </div>
     </div>
 
     <div class="lace-divider"></div>
   </section>
 
-  <!-- CONTENIDO PRINCIPAL CON HUELLITAS GRANDES Y SÍMBOLOS CUTES -->
+  <!-- CONTENIDO PRINCIPAL -->
   <main class="page-wrapper">
 
-    <!-- DECORACIÓN LATERAL IZQUIERDA (CAMINITO DE HUELLITAS + SÍMBOLOS) -->
+    <!-- DECORACIÓN LATERAL IZQUIERDA -->
     <div class="side-doodles side-left" aria-hidden="true">
       <div class="doodle-row">
         <svg class="doodle-paw tilt-left" viewBox="0 0 64 64"><ellipse cx="32" cy="40" rx="13" ry="10"/><circle cx="16" cy="26" r="5.5"/><circle cx="26" cy="18" r="5.5"/><circle cx="38" cy="18" r="5.5"/><circle cx="48" cy="26" r="5.5"/></svg>
@@ -107,17 +135,9 @@
         <svg class="doodle-sym tilt-left" viewBox="0 0 64 64"><path d="M32 54S10 40 10 24a12 12 0 0 1 22-6.5A12 12 0 0 1 54 24c0 16-22 30-22 30z"/></svg>
         <svg class="doodle-paw tilt-right" viewBox="0 0 64 64"><ellipse cx="32" cy="40" rx="13" ry="10"/><circle cx="16" cy="26" r="5.5"/><circle cx="26" cy="18" r="5.5"/><circle cx="38" cy="18" r="5.5"/><circle cx="48" cy="26" r="5.5"/></svg>
       </div>
-      <div class="doodle-row">
-        <svg class="doodle-paw tilt-left" viewBox="0 0 64 64"><ellipse cx="32" cy="40" rx="13" ry="10"/><circle cx="16" cy="26" r="5.5"/><circle cx="26" cy="18" r="5.5"/><circle cx="38" cy="18" r="5.5"/><circle cx="48" cy="26" r="5.5"/></svg>
-        <svg class="doodle-sym tilt-right" viewBox="0 0 64 64"><polygon points="32,6 39,23 58,25 44,37 48,56 32,46 16,56 20,37 6,25 25,23"/></svg>
-      </div>
-      <div class="doodle-row shift-in">
-        <svg class="doodle-sym tilt-left" viewBox="0 0 64 64"><path d="M32 54S10 40 10 24a12 12 0 0 1 22-6.5A12 12 0 0 1 54 24c0 16-22 30-22 30z"/></svg>
-        <svg class="doodle-paw tilt-right" viewBox="0 0 64 64"><ellipse cx="32" cy="40" rx="13" ry="10"/><circle cx="16" cy="26" r="5.5"/><circle cx="26" cy="18" r="5.5"/><circle cx="38" cy="18" r="5.5"/><circle cx="48" cy="26" r="5.5"/></svg>
-      </div>
     </div>
 
-    <!-- DECORACIÓN LATERAL DERECHA (CAMINITO DE HUELLITAS + SÍMBOLOS) -->
+    <!-- DECORACIÓN LATERAL DERECHA -->
     <div class="side-doodles side-right" aria-hidden="true">
       <div class="doodle-row">
         <svg class="doodle-sym tilt-left" viewBox="0 0 64 64"><polygon points="32,6 39,23 58,25 44,37 48,56 32,46 16,56 20,37 6,25 25,23"/></svg>
@@ -135,202 +155,63 @@
         <svg class="doodle-paw tilt-left" viewBox="0 0 64 64"><ellipse cx="32" cy="40" rx="13" ry="10"/><circle cx="16" cy="26" r="5.5"/><circle cx="26" cy="18" r="5.5"/><circle cx="38" cy="18" r="5.5"/><circle cx="48" cy="26" r="5.5"/></svg>
         <svg class="doodle-sym tilt-right" viewBox="0 0 64 64"><polygon points="32,6 39,23 58,25 44,37 48,56 32,46 16,56 20,37 6,25 25,23"/></svg>
       </div>
-      <div class="doodle-row">
-        <svg class="doodle-sym tilt-left" viewBox="0 0 64 64"><path d="M32 54S10 40 10 24a12 12 0 0 1 22-6.5A12 12 0 0 1 54 24c0 16-22 30-22 30z"/></svg>
-        <svg class="doodle-paw tilt-right" viewBox="0 0 64 64"><ellipse cx="32" cy="40" rx="13" ry="10"/><circle cx="16" cy="26" r="5.5"/><circle cx="26" cy="18" r="5.5"/><circle cx="38" cy="18" r="5.5"/><circle cx="48" cy="26" r="5.5"/></svg>
-      </div>
-      <div class="doodle-row shift-out">
-        <svg class="doodle-paw tilt-left" viewBox="0 0 64 64"><ellipse cx="32" cy="40" rx="13" ry="10"/><circle cx="16" cy="26" r="5.5"/><circle cx="26" cy="18" r="5.5"/><circle cx="38" cy="18" r="5.5"/><circle cx="48" cy="26" r="5.5"/></svg>
-        <svg class="doodle-sym tilt-right" viewBox="0 0 64 64"><polygon points="32,6 39,23 58,25 44,37 48,56 32,46 16,56 20,37 6,25 25,23"/></svg>
-      </div>
     </div>
 
-    <!-- BARRITA CUTE DE BENEFICIOS -->
+    <!-- BARRITA DE BENEFICIOS -->
     <section class="perks-bar">
-      <div class="perk-pill">🐾 Felpa ultra suave</div>
-      <div class="perk-pill">🎁 Incluye bolsa y tarjetita</div>
-      <div class="perk-pill">🚚 Envíos a todo el país</div>
-      <div class="perk-pill">💬 Pedido directo por WhatsApp</div>
-    </section>
-
-    <!-- SECCIÓN FAVORITO DE LA SEMANA -->
-    <h2 class="section-title" id="favorito">✿ Favorito de la Semana ✿</h2>
-
-    <section class="featured-card">
-      <div class="featured-media">
-        <img src="img/azulito toma 2.png" alt="Peluche Destacado" />
-      </div>
-      <div class="featured-info">
-        <span class="mini-tag">★ Edición Limitada</span>
-        <h2>Edición Especial Celeste</h2>
-        <p>Suavidad premium con relleno siliconado que mantiene su forma tras cada abrazo. Disponible con entrega inmediata y bolsa de regalo incluida.</p>
-        <div class="featured-price">Bs. 120</div>
-        <button class="btn-primary" onclick="addToCart('Edición Especial Celeste', 120)">Agregar al Pedido ♥</button>
-      </div>
-    </section>
-
-    <!-- CATÁLOGO DE 3 COLUMNAS -->
-    <h2 class="section-title" id="catalogo">✿ Catálogo Disponible ✿</h2>
-
-    <section class="catalog-grid">
-      <article class="product-card">
-        <span class="card-badge">♥ Más vendido</span>
-        <div class="product-thumb">
-          <img src="img/panda.jpg" alt="Panda de Escandalosos" />
-        </div>
-        <h3 class="product-title">Panda de Escandalosos</h3>
-        <p class="product-desc">35 cm · Felpa suave esponjosa</p>
-        <div class="product-footer">
-          <span class="product-price">Bs. 85</span>
-          <button class="btn-add" onclick="addToCart('Panda de Escandalosos', 85)">+ Agregar</button>
-        </div>
-      </article>
-
-      <article class="product-card">
-        <span class="card-badge">✦ Nuevo</span>
-        <div class="product-thumb">
-          <img src="img/uzi.png" alt="Uzi doorman" />
-        </div>
-        <h3 class="product-title">Uzi doorman</h3>
-        <p class="product-desc">30 cm · Edición tierna</p>
-        <div class="product-footer">
-          <span class="product-price">Bs. 80</span>
-          <button class="btn-add" onclick="addToCart('Uzi doorman', 80)">+ Agregar</button>
-        </div>
-      </article>
-
-      <article class="product-card">
-        <span class="card-badge">★ Favorito</span>
-        <div class="product-thumb">
-          <img src="img/squirtle.jpg" alt="Squirtle Pokemon" />
-        </div>
-        <h3 class="product-title">Squirtle Pokemon</h3>
-        <p class="product-desc">32 cm · Súper abrazable</p>
-        <div class="product-footer">
-          <span class="product-price">Bs. 90</span>
-          <button class="btn-add" onclick="addToCart('Squirtle Pokemon', 90)">+ Agregar</button>
-        </div>
-      </article>
-
-      <article class="product-card">
-        <span class="card-badge">🐾 Tierno</span>
-        <div class="product-thumb">
-          <img src="img/freddy.jpg" alt="Freddy" />
-        </div>
-        <h3 class="product-title">Freddy</h3>
-        <p class="product-desc">28 cm · Con bufanda celeste</p>
-        <div class="product-footer">
-          <span class="product-price">Bs. 75</span>
-          <button class="btn-add" onclick="addToCart('Freddy', 75)">+ Agregar</button>
-        </div>
-      </article>
-
-      <article class="product-card">
-        <span class="card-badge">☁ Grande</span>
-        <div class="product-thumb">
-          <img src="img/snoopy de PELUCHE.png" alt="Snoopy" />
-        </div>
-        <h3 class="product-title">Snoopy</h3>
-        <p class="product-desc">40 cm · Tamaño grande</p>
-        <div class="product-footer">
-          <span class="product-price">Bs. 110</span>
-          <button class="btn-add" onclick="addToCart('Snoopy', 110)">+ Agregar</button>
-        </div>
-      </article>
-
-      <article class="product-card">
-        <span class="card-badge">♥♥ Dúo Regalo</span>
-        <div class="product-thumb">
-          <img src="img/stich's dobles.png" alt="Dúo Peluches stich" />
-        </div>
-        <h3 class="product-title">Dúo Peluches stich</h3>
-        <p class="product-desc">Set x2 · Ideal para regalar</p>
-        <div class="product-footer">
-          <span class="product-price">Bs. 145</span>
-          <button class="btn-add" onclick="addToCart('Dúo Peluches stich', 145)">+ Agregar</button>
-        </div>
-      </article>
+      <div class="perk-pill">🧸 Relleno 100% Hipoalergénico</div>
+      <div class="perk-pill">🎁 Bolsa de Regalo Gratis</div>
+      <div class="perk-pill">🚚 Envíos Seguros en el Día</div>
+      <div class="perk-pill">💬 Atención Personalizada</div>
     </section>
 
     <!-- PASOS PARA PEDIR -->
-    <section class="steps-section">
-      <h2 class="section-title">✿ ¿Cómo Pedir tu Peluche? ✿</h2>
+    <section class="steps-section" style="margin-bottom: 0;">
+      <h2 class="section-title">✿ ¿Cómo hacer tu pedido? ✿</h2>
       <div class="steps-grid">
         <div class="step-card">
           <span class="step-num">1</span>
-          <h3>Elige tus favoritos</h3>
-          <p>Agrégalos a tu cesta haciendo clic en el botón "+ Agregar" de cada peluche.</p>
+          <h3>Entra al Catálogo</h3>
+          <p>Explora todos nuestros modelos disponibles y elige tus peluches favoritos.</p>
         </div>
         <div class="step-card">
           <span class="step-num">2</span>
-          <h3>Abre tu Cesta</h3>
-          <p>Revisa tu lista arriba a la derecha y elige si quieres pedir con Cintia o Briana.</p>
+          <h3>Agrégalos a tu Cesta</h3>
+          <p>Revisa los peluches seleccionados y el total desde el botón superior.</p>
         </div>
         <div class="step-card">
           <span class="step-num">3</span>
-          <h3>Recíbelo con cariño</h3>
-          <p>Coordinamos la entrega por WhatsApp con bolsita y tarjeta dedicatoria gratis.</p>
+          <h3>Pide por WhatsApp</h3>
+          <p>Envía tu pedido directo a Cintia o Briana para coordinar la entrega.</p>
         </div>
-      </div>
-    </section>
-
-    <!-- SECCIÓN EQUIPO (DÚO DE 2) -->
-    <section class="team-section" id="equipo">
-      <h2 class="section-title">✿ El Dúo Detrás de los Abrazos ✿</h2>
-      <p class="team-subtitle">Nosotras dos elegimos, preparamos y empacamos cada peluche con mucho cariño.</p>
-
-      <div class="team-grid">
-        <article class="team-card">
-          <div class="team-ears"><span></span><span></span></div>
-          <div class="team-avatar">
-            <img src="img/logo.png" alt="Cintia Marquina" />
-          </div>
-          <h3 class="team-name">Cintia Marquina</h3>
-          <span class="team-role">Diseño, Fotos y Redes</span>
-          <p class="team-bio">Encargada de elegir los peluches más suaves, tomar las fotos y manejar la página.</p>
-          <a href="https://wa.me/59163397495?text=Hola%20Cintia!%20Vi%20la%20tienda%20Dulce%20Peluche%20y%20quiero%20hacer%20una%20consulta." target="_blank" class="btn-wa-card">💬 WhatsApp de Cintia</a>
-        </article>
-
-        <article class="team-card">
-          <div class="team-ears"><span></span><span></span></div>
-          <div class="team-avatar">
-            <img src="img/logo.png" alt="Briana Siñani" />
-          </div>
-          <h3 class="team-name">Briana Siñani</h3>
-          <span class="team-role">Ventas, Empaque y Entregas</span>
-          <p class="team-bio">Prepara cada regalo con dedicatoria, atiende los pedidos y coordina las entregas.</p>
-          <a href="https://wa.me/59164550630?text=Hola%20Briana!%20Vi%20la%20tienda%20Dulce%20Peluche%20y%20quiero%20hacer%20una%20consulta." target="_blank" class="btn-wa-card">💬 WhatsApp de Briana</a>
-        </article>
       </div>
     </section>
 
   </main>
 
-  <footer id="contacto">
-    <p><strong>Dulce Peluche</strong> · Envíos a todo el país · Pedidos directos por WhatsApp</p>
-  </footer>
-
-  <!-- MODAL DEL CARRITO -->
-  <div class="cart-modal" id="cart-modal" onclick="if(event.target===this) toggleCart()">
+  <!-- MODAL CARRITO -->
+  <div class="cart-modal" id="cart-modal">
     <div class="cart-box">
       <div class="cart-header">
-        <h3>Tu Cesta de Peluches</h3>
+        <h3>🧸 Tu Cesta</h3>
         <button class="btn-close-modal" onclick="toggleCart()">✕</button>
       </div>
-      <div class="cart-items" id="cart-items">
-        <p class="cart-empty">Aún no agregaste peluches.</p>
-      </div>
+      <div class="cart-items" id="cart-items"></div>
       <div class="cart-total">
         <span>Total:</span>
         <span id="cart-total">Bs. 0</span>
       </div>
-      <p class="cart-wa-label">Elige con quién hacer tu pedido por WhatsApp:</p>
+      <p class="cart-wa-label">Enviar pedido por WhatsApp a:</p>
       <div class="cart-wa-buttons">
-        <button class="btn-whatsapp" onclick="sendWhatsApp('cintia')">Pedir con Cintia</button>
-        <button class="btn-whatsapp alt" onclick="sendWhatsApp('briana')">Pedir con Briana</button>
+        <button class="btn-whatsapp" onclick="sendWhatsApp('59163397495', 'Cintia')">💬 Cintia</button>
+        <button class="btn-whatsapp alt" onclick="sendWhatsApp('59164550630', 'Briana')">💬 Briana</button>
       </div>
     </div>
   </div>
+
+  <footer>
+    <p><strong>Dulce Peluche</strong> · Cintia Marquina & Briana Siñani</p>
+  </footer>
 
   <script src="js/main.js"></script>
   <script src="js/rutas.js"></script>
