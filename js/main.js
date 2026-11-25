@@ -9,7 +9,7 @@ function showToast(mensaje) {
     toast = document.createElement("div");
     toast.id = "dp-toast";
     toast.style.cssText =
-      "position:fixed;bottom:22px;right:22px;background:#1b3b5a;color:#ffffff;border:2px solid #5bb5e6;padding:12px 20px;border-radius:999px;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.88rem;z-index:999;box-shadow:0 8px 20px rgba(27,59,90,0.25);transition:opacity 0.3s;";
+      "position:fixed;bottom:22px;right:22px;background:#1d3c5c;color:#ffffff;border:2px dashed #64bce8;padding:12px 20px;border-radius:999px;font-family:'Fredoka',sans-serif;font-weight:500;font-size:0.9rem;z-index:999;box-shadow:0 8px 20px rgba(29,60,92,0.25);transition:opacity 0.3s;";
     document.body.appendChild(toast);
   }
   toast.textContent = mensaje;
@@ -23,7 +23,7 @@ function showToast(mensaje) {
 function addToCart(name, price) {
   cart.push({ name, price });
   updateCartUI();
-  showToast(`✓ ${name} agregado a la cesta`);
+  showToast(`♥ ${name} agregado a la cesta`);
 }
 
 function removeFromCart(index) {

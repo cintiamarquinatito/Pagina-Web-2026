@@ -1,9 +1,11 @@
 /* PALETA ESTRICTA DE 3 COLORES: CELESTE, BLANCO Y AZUL MARINO */
 :root {
-  --celeste: #5bb5e6;
-  --celeste-claro: #eaf6fc;
-  --blanco: #ffffff;
-  --azul-oscuro: #1b3b5a;
+  --celeste: #64bce8;
+  --celeste-medio: #bce3f7;
+  --celeste-claro: #eef8fd;
+  --blanco: #fbfdff;
+  --blanco-puro: #ffffff;
+  --azul-oscuro: #1d3c5c;
 }
 
 * {
@@ -17,16 +19,18 @@ body {
   color: var(--azul-oscuro);
   background-color: var(--blanco);
   overflow-x: hidden;
+  line-height: 1.6;
 }
 
-/* ================= NAVBAR SUPERIOR ================= */
+/* ================= NAVBAR SUPERIOR CON ENCAJE ================= */
 header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: var(--blanco);
-  border-bottom: 2px solid var(--celeste-claro);
+  background: var(--blanco-puro);
+  border-bottom: 3px dashed var(--celeste-medio);
   padding: 12px 5%;
+  box-shadow: 0 4px 16px rgba(29, 60, 92, 0.05);
 }
 
 .nav-container {
@@ -47,11 +51,11 @@ header {
 }
 
 .brand-icon {
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
-  background: var(--blanco);
-  border: 2px solid var(--celeste);
+  background: var(--blanco-puro);
+  border: 2px dashed var(--celeste);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -66,16 +70,16 @@ header {
 }
 
 .brand-name {
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 700;
-  font-size: 1.15rem;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 600;
+  font-size: 1.25rem;
   line-height: 1.1;
   color: var(--azul-oscuro);
 }
 
 .brand-sub {
   display: block;
-  font-size: 0.72rem;
+  font-size: 0.74rem;
   color: var(--celeste);
   font-weight: 700;
 }
@@ -90,7 +94,7 @@ header {
 .nav-links a {
   text-decoration: none;
   color: var(--azul-oscuro);
-  font-size: 0.92rem;
+  font-size: 0.94rem;
   font-weight: 700;
   transition: color 0.2s;
 }
@@ -104,26 +108,27 @@ header {
   height: 44px;
   border-radius: 50%;
   background: var(--celeste);
+  border: 2px dashed var(--blanco-puro);
   display: grid;
   place-items: center;
-  box-shadow: 0 4px 12px rgba(91, 181, 230, 0.35);
+  box-shadow: 0 4px 12px rgba(100, 188, 232, 0.35);
   flex-shrink: 0;
 }
 
 .btn-cart {
   background: var(--celeste);
-  color: var(--blanco);
-  border: none;
-  padding: 10px 20px;
+  color: var(--blanco-puro);
+  border: 2px dashed var(--blanco-puro);
+  padding: 9px 20px;
   border-radius: 999px;
-  font-family: 'Nunito', sans-serif;
-  font-weight: 800;
-  font-size: 0.85rem;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
   cursor: pointer;
   display: flex;
   align-items: center;
   gap: 8px;
-  box-shadow: 0 4px 12px rgba(91, 181, 230, 0.35);
+  box-shadow: 0 4px 12px rgba(100, 188, 232, 0.35);
   transition: background 0.2s, transform 0.15s;
 }
 
@@ -132,10 +137,10 @@ header {
   transform: translateY(-1px);
 }
 
-/* ================= HERO BANNER CELESTE CON LUNAS Y ESTRELLAS BLANCAS ================= */
+/* ================= HERO BANNER CUTE CON TARJETA DE ENCAJE ================= */
 .hero {
   position: relative;
-  background: linear-gradient(180deg, #6dc2ef 0%, var(--celeste) 100%);
+  background: linear-gradient(180deg, #88cef2 0%, var(--celeste) 100%);
   min-height: 470px;
   display: flex;
   flex-direction: column;
@@ -158,114 +163,131 @@ header {
   max-width: 1120px;
   width: 100%;
   margin: 0 auto;
-  padding: 36px 5% 0;
+  padding: 38px 5% 28px;
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
-  gap: 24px;
+  gap: 32px;
   flex: 1;
 }
 
 .hero-image-box {
   display: flex;
   justify-content: center;
-  align-items: flex-end;
-  height: 100%;
+  align-items: center;
 }
 
 .hero-image-box img {
-  max-height: 360px;
+  max-height: 340px;
   width: auto;
   max-width: 100%;
   object-fit: contain;
-  filter: drop-shadow(0 14px 20px rgba(27, 59, 90, 0.22));
-  transform: translateY(14px);
+  filter: drop-shadow(0 14px 22px rgba(29, 60, 92, 0.18));
 }
 
-.hero-text {
-  color: var(--blanco);
-  padding-bottom: 36px;
+.hero-text-card {
+  background: rgba(251, 253, 255, 0.94);
+  border-radius: 26px;
+  padding: 32px 34px;
+  border: 2px dashed var(--celeste);
+  outline: 6px solid rgba(255, 255, 255, 0.75);
+  box-shadow: 0 14px 30px rgba(29, 60, 92, 0.12);
 }
 
-.hero-text h1 {
-  font-family: 'Quicksand', sans-serif;
-  font-size: clamp(2.1rem, 4vw, 3.1rem);
+.hero-badge {
+  display: inline-block;
+  background: var(--celeste-claro);
+  color: var(--celeste);
+  font-family: 'Fredoka', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 4px 14px;
+  border-radius: 999px;
+  border: 1.5px dashed var(--celeste);
+  margin-bottom: 12px;
+}
+
+.hero-text-card h1 {
+  font-family: 'Fredoka', sans-serif;
+  font-size: clamp(2rem, 3.6vw, 2.85rem);
   font-weight: 700;
-  line-height: 1.12;
-  margin-bottom: 14px;
-  text-shadow: 0 2px 10px rgba(27, 59, 90, 0.14);
+  line-height: 1.15;
+  color: var(--azul-oscuro);
+  margin-bottom: 12px;
 }
 
-.hero-text p {
+.hero-text-card p {
   font-size: 1rem;
-  line-height: 1.6;
-  color: var(--blanco);
-  max-width: 390px;
+  line-height: 1.65;
+  color: var(--azul-oscuro);
+  opacity: 0.88;
   margin-bottom: 22px;
 }
 
 .hero-btn {
   display: inline-block;
-  background: var(--blanco);
-  color: var(--azul-oscuro);
-  font-weight: 800;
+  background: var(--celeste);
+  color: var(--blanco-puro);
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 600;
   text-decoration: none;
-  padding: 12px 26px;
+  padding: 12px 28px;
   border-radius: 999px;
-  font-size: 0.9rem;
-  box-shadow: 0 6px 16px rgba(27, 59, 90, 0.15);
-  transition: background 0.2s, color 0.2s, transform 0.2s;
+  border: 2px dashed var(--blanco-puro);
+  font-size: 0.95rem;
+  box-shadow: 0 6px 16px rgba(100, 188, 232, 0.35);
+  transition: background 0.2s, transform 0.2s;
 }
 
 .hero-btn:hover {
   background: var(--azul-oscuro);
-  color: var(--blanco);
   transform: translateY(-2px);
 }
 
-.hero-floor {
+.lace-divider {
   position: relative;
-  z-index: 1;
-  height: 50px;
+  z-index: 2;
+  height: 22px;
   width: 100%;
-  background: var(--celeste-claro);
-  border-top: 2px solid var(--blanco);
+  background-color: var(--blanco);
+  background-image: radial-gradient(circle at 14px 0px, var(--celeste) 12px, transparent 13px);
+  background-size: 28px 22px;
 }
 
 /* ================= CONTENIDO PRINCIPAL ================= */
 .page-wrapper {
   position: relative;
   background-color: var(--blanco);
-  background-image: radial-gradient(var(--celeste-claro) 4px, transparent 4px);
-  background-size: 46px 46px;
-  padding: 52px 5% 80px;
+  background-image: radial-gradient(var(--celeste-claro) 5px, transparent 5px);
+  background-size: 48px 48px;
+  padding: 48px 5% 80px;
 }
 
 .section-title {
   text-align: center;
-  font-family: 'Quicksand', sans-serif;
-  font-size: 1.7rem;
-  font-weight: 700;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 600;
   color: var(--azul-oscuro);
-  margin-bottom: 28px;
+  margin-bottom: 30px;
   letter-spacing: 0.3px;
 }
 
-/* ================= SECCIÓN DESTACADA (TARJETA DIVIDIDA) ================= */
+/* ================= SECCIÓN DESTACADA CON ENCAJE ================= */
 .featured-card {
-  max-width: 980px;
+  max-width: 960px;
   margin: 0 auto 68px;
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  background: var(--blanco);
-  border-radius: 18px;
+  grid-template-columns: 1.05fr 0.95fr;
+  background: var(--blanco-puro);
+  border-radius: 24px;
   overflow: hidden;
-  border: 2px solid var(--celeste-claro);
-  box-shadow: 0 14px 34px rgba(27, 59, 90, 0.08);
+  border: 2.5px dashed var(--celeste);
+  box-shadow: 0 14px 34px rgba(29, 60, 92, 0.07);
 }
 
 .featured-media {
-  background: var(--celeste);
+  background: linear-gradient(135deg, #86ccf0 0%, var(--celeste) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -274,59 +296,57 @@ header {
 }
 
 .featured-media img {
-  max-height: 260px;
+  max-height: 255px;
   width: auto;
   max-width: 100%;
   object-fit: contain;
-  filter: drop-shadow(0 10px 18px rgba(27, 59, 90, 0.2));
+  filter: drop-shadow(0 10px 18px rgba(29, 60, 92, 0.18));
 }
 
 .featured-info {
   background: var(--celeste-claro);
-  padding: 38px 34px;
+  padding: 36px 34px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
 .featured-info h2 {
-  font-family: 'Quicksand', sans-serif;
-  font-size: 1.35rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
   color: var(--azul-oscuro);
   margin-bottom: 12px;
 }
 
 .featured-info p {
-  font-size: 0.92rem;
-  line-height: 1.6;
+  font-size: 0.95rem;
+  line-height: 1.65;
   color: var(--azul-oscuro);
-  margin-bottom: 20px;
+  opacity: 0.9;
+  margin-bottom: 18px;
 }
 
 .featured-price {
-  font-size: 1.3rem;
-  font-weight: 800;
-  color: var(--celeste);
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--azul-oscuro);
   margin-bottom: 18px;
 }
 
 .btn-primary {
   align-self: flex-start;
   background: var(--celeste);
-  color: var(--blanco);
-  border: none;
+  color: var(--blanco-puro);
+  border: 2px dashed var(--blanco-puro);
   padding: 12px 26px;
   border-radius: 999px;
-  font-family: 'Nunito', sans-serif;
-  font-weight: 800;
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 0.6px;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
   cursor: pointer;
-  box-shadow: 0 6px 14px rgba(91, 181, 230, 0.35);
+  box-shadow: 0 6px 14px rgba(100, 188, 232, 0.35);
   transition: background 0.2s, transform 0.15s;
 }
 
@@ -335,9 +355,9 @@ header {
   transform: translateY(-2px);
 }
 
-/* ================= CATÁLOGO 3 COLUMNAS ================= */
+/* ================= CATÁLOGO 3 COLUMNAS CON ENCAJE ================= */
 .catalog-grid {
-  max-width: 980px;
+  max-width: 960px;
   margin: 0 auto 76px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -345,11 +365,11 @@ header {
 }
 
 .product-card {
-  background: var(--blanco);
-  border-radius: 16px;
+  background: var(--blanco-puro);
+  border-radius: 22px;
   padding: 16px;
-  border: 2px solid var(--celeste-claro);
-  box-shadow: 0 10px 24px rgba(27, 59, 90, 0.06);
+  border: 2px dashed var(--celeste-medio);
+  box-shadow: 0 10px 24px rgba(29, 60, 92, 0.05);
   text-align: center;
   transition: transform 0.2s, border-color 0.2s;
 }
@@ -361,8 +381,9 @@ header {
 
 .product-thumb {
   aspect-ratio: 1 / 1;
-  border-radius: 12px;
+  border-radius: 16px;
   background: var(--celeste-claro);
+  border: 1.5px dashed var(--celeste-medio);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -383,17 +404,17 @@ header {
 }
 
 .product-title {
-  font-family: 'Quicksand', sans-serif;
-  font-size: 1.05rem;
-  font-weight: 700;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
   color: var(--azul-oscuro);
   margin-bottom: 4px;
 }
 
 .product-desc {
-  font-size: 0.82rem;
+  font-size: 0.85rem;
   color: var(--azul-oscuro);
-  opacity: 0.78;
+  opacity: 0.8;
   margin-bottom: 12px;
 }
 
@@ -406,32 +427,33 @@ header {
 }
 
 .product-price {
-  font-weight: 800;
-  font-size: 1.08rem;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 600;
+  font-size: 1.12rem;
   color: var(--azul-oscuro);
 }
 
 .btn-add {
   background: var(--celeste-claro);
   color: var(--azul-oscuro);
-  border: none;
+  border: 1.5px dashed var(--celeste);
   padding: 7px 15px;
   border-radius: 999px;
-  font-family: 'Nunito', sans-serif;
-  font-weight: 800;
-  font-size: 0.82rem;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 600;
+  font-size: 0.84rem;
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
 }
 
 .btn-add:hover {
   background: var(--celeste);
-  color: var(--blanco);
+  color: var(--blanco-puro);
 }
 
 /* ================= SECCIÓN EQUIPO (DÚO DE 2) ================= */
 .team-section {
-  max-width: 980px;
+  max-width: 960px;
   margin: 0 auto;
   padding-top: 12px;
 }
@@ -444,7 +466,7 @@ header {
   text-align: center;
   color: var(--azul-oscuro);
   opacity: 0.85;
-  font-size: 0.95rem;
+  font-size: 0.96rem;
   margin-bottom: 38px;
 }
 
@@ -458,12 +480,12 @@ header {
 
 .team-card {
   position: relative;
-  background: var(--blanco);
-  border-radius: 18px;
+  background: var(--blanco-puro);
+  border-radius: 22px;
   padding: 28px 20px 22px;
   text-align: center;
-  box-shadow: 0 12px 26px rgba(27, 59, 90, 0.07);
-  border: 2px solid var(--celeste-claro);
+  box-shadow: 0 12px 26px rgba(29, 60, 92, 0.06);
+  border: 2px dashed var(--celeste-medio);
   transition: transform 0.22s, border-color 0.22s;
   display: flex;
   flex-direction: column;
@@ -474,7 +496,6 @@ header {
   border-color: var(--celeste);
 }
 
-/* Orejitas de peluche celestes */
 .team-ears {
   position: absolute;
   top: -13px;
@@ -489,16 +510,16 @@ header {
   height: 18px;
   border-radius: 50% 50% 0 0;
   background: var(--celeste);
-  border: 3px solid var(--blanco);
+  border: 3px solid var(--blanco-puro);
 }
 
 .team-avatar {
-  width: 115px;
-  height: 115px;
+  width: 112px;
+  height: 112px;
   margin: 0 auto 14px;
   border-radius: 50%;
-  background: var(--blanco);
-  border: 3px solid var(--celeste);
+  background: var(--blanco-puro);
+  border: 2.5px dashed var(--celeste);
   padding: 6px;
   display: flex;
   align-items: center;
@@ -514,9 +535,9 @@ header {
 }
 
 .team-name {
-  font-family: 'Quicksand', sans-serif;
-  font-size: 1.1rem;
-  font-weight: 700;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
   color: var(--azul-oscuro);
   margin-bottom: 6px;
 }
@@ -525,17 +546,17 @@ header {
   align-self: center;
   display: inline-block;
   background: var(--celeste);
-  color: var(--blanco);
-  font-size: 0.76rem;
-  font-weight: 800;
+  color: var(--blanco-puro);
+  font-size: 0.78rem;
+  font-weight: 700;
   padding: 4px 14px;
   border-radius: 999px;
   margin-bottom: 10px;
 }
 
 .team-bio {
-  font-size: 0.85rem;
-  line-height: 1.5;
+  font-size: 0.88rem;
+  line-height: 1.55;
   color: var(--azul-oscuro);
   opacity: 0.85;
   margin-bottom: 14px;
@@ -546,12 +567,14 @@ header {
   display: inline-block;
   width: 100%;
   background: var(--azul-oscuro);
-  color: var(--blanco);
+  color: var(--blanco-puro);
   text-decoration: none;
-  font-size: 0.82rem;
-  font-weight: 800;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 0.86rem;
+  font-weight: 500;
   padding: 9px 14px;
   border-radius: 999px;
+  border: 1.5px dashed var(--blanco-puro);
   transition: background 0.2s;
 }
 
@@ -563,7 +586,7 @@ header {
 .cart-modal {
   position: fixed;
   inset: 0;
-  background: rgba(27, 59, 90, 0.45);
+  background: rgba(29, 60, 92, 0.45);
   display: none;
   align-items: center;
   justify-content: center;
@@ -576,13 +599,13 @@ header {
 }
 
 .cart-box {
-  background: var(--blanco);
+  background: var(--blanco-puro);
   width: 100%;
   max-width: 420px;
-  border-radius: 18px;
+  border-radius: 22px;
   padding: 24px;
-  border: 2px solid var(--celeste);
-  box-shadow: 0 20px 45px rgba(27, 59, 90, 0.22);
+  border: 2.5px dashed var(--celeste);
+  box-shadow: 0 20px 45px rgba(29, 60, 92, 0.22);
 }
 
 .cart-header {
@@ -590,8 +613,9 @@ header {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 16px;
-  border-bottom: 2px solid var(--celeste-claro);
+  border-bottom: 2px dashed var(--celeste-claro);
   padding-bottom: 10px;
+  font-family: 'Fredoka', sans-serif;
   color: var(--azul-oscuro);
 }
 
@@ -620,8 +644,8 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 8px 0;
-  border-bottom: 1px dashed var(--celeste-claro);
-  font-size: 0.9rem;
+  border-bottom: 1.5px dashed var(--celeste-claro);
+  font-size: 0.92rem;
   color: var(--azul-oscuro);
 }
 
@@ -637,14 +661,15 @@ header {
 .cart-total {
   display: flex;
   justify-content: space-between;
-  font-weight: 800;
-  font-size: 1.1rem;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 600;
+  font-size: 1.15rem;
   margin-bottom: 14px;
   color: var(--azul-oscuro);
 }
 
 .cart-wa-label {
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   font-weight: 700;
   color: var(--azul-oscuro);
   opacity: 0.8;
@@ -661,13 +686,13 @@ header {
 .btn-whatsapp {
   width: 100%;
   background: var(--celeste);
-  color: var(--blanco);
-  border: none;
+  color: var(--blanco-puro);
+  border: 1.5px dashed var(--blanco-puro);
   padding: 11px 10px;
   border-radius: 999px;
-  font-family: 'Nunito', sans-serif;
-  font-weight: 800;
-  font-size: 0.85rem;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 500;
+  font-size: 0.88rem;
   cursor: pointer;
   transition: background 0.2s;
 }
@@ -685,8 +710,8 @@ footer {
   padding: 26px;
   background: var(--celeste-claro);
   color: var(--azul-oscuro);
-  font-size: 0.85rem;
-  border-top: 2px solid var(--celeste);
+  font-size: 0.88rem;
+  border-top: 3px dashed var(--celeste);
 }
 
 /* ================= DISEÑO RESPONSIVO ================= */
@@ -695,10 +720,6 @@ footer {
   .featured-card {
     grid-template-columns: 1fr;
     text-align: center;
-  }
-  .hero-text p {
-    margin-left: auto;
-    margin-right: auto;
   }
   .featured-info {
     align-items: center;
